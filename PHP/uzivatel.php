@@ -63,6 +63,38 @@
             </tr>
           </table>    ";
    }
+   
+   ?>
+   <form method="post">
+   	<textarea name="zprava"></textarea>
+    <input type="submit" value="Odeslat">
+   
+   </form>
+   
+   
+   <?php
+   
+   if(isset($_POST["zprava"])){
+   		if($_POST["zprava"]=="") {echo "vypln";}
+		else {
+			
+	$to      = 'pisl.ondrej@gmail.com';
+    $subject = 'můj předmět';
+    $message = 'Můj obsah zprávy....';
+    $headers = 'From: neodepisuj@ondra-fitness.cz' . "\r\n" .
+        'Reply-To: neodepisuj@ondra-fitness.cz' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    $odeslani = mail($to, $subject, $message, $headers);
+
+         
+         if($odeslani == false ) {
+            echo "chyba";
+            exit;
+         }			
+	   }
+   }
+    
   ?>
  
 </article><
