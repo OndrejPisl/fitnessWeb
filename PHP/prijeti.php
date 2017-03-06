@@ -52,7 +52,7 @@
      <td>{$zaznam["narodnost_nazev"]}</td>
      <td title='{$zaznam['info']}'>$informace</td>
      <td><a href='potvrzeni.php?id={$zaznam["uzivatel_id"]}' class='prijetiodkazy'>Přijmout</a></td>
-	 <td><a href='odmitnuti.php?id={$zaznam["uzivatel_id"]}' class='prijetiodkazy'>Smazat</a></td>
+	 <td><a href='odmitnuti.php?id={$zaznam["uzivatel_id"]}' class='spravaodmitnutiodkazy'>Smazat</a></td>
 
    </tr> ";
    }
