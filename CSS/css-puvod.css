@@ -1,0 +1,78 @@
+/* CSS Document */
+body {
+margin: 0;
+padding: 0;
+}
+#dheader {
+  width: 100%;
+  background-color: #323232;
+  /*text-shadow: 2px 2px 3px black;*/
+  font-family: 'Russo One', 'Open Sans', Arial, sans-serif;
+  text-align: center;
+  height: 80px;
+ /* padding-top: 40px;
+  padding-left: 50px;*/
+  float: left;
+  text-align: left;
+  height: 120px;
+  overflow: auto;
+}
+nav{
+text-align: left;
+padding-top: 40px;
+text-align: center;
+}
+nav a{
+text-decoration: none;
+color: white;
+font-weight: bold;
+padding-top: 20px;
+font-size: 20px;
+}
+nav a:hover{
+text-decoration: underline;
+}
+h1{
+/*color: #E21330;*/
+color: #377EB5;
+margin: 0;
+font-size: 25px;
+font-family: 'Russo One', 'Open Sans', Arial, sans-serif;
+text-transform: uppercase
+}
+h2{
+color: black;
+font-weight: bold;
+font-size: 20px;
+font-family: 'Russo One', 'Open Sans', Arial, sans-serif;
+text-transform: uppercase
+}
+.mezery{
+padding-left: 20px;
+}
+#darticle{
+padding: 20px 10px 20px 10px;
+margin-top: 120px;
+}
+article{
+text-align: left;
+margin: auto ;
+width: 960px;
+}
+p{
+line-height: 1.4;
+margin: 25px 0;
+text-align: justify;
+}
+footer{
+height: 70px;
+background-color: #323232;
+color: white;
+text-align: center;
+float: left;
+width: 100%;
+}
+img{
+float: right;
+margin: 5px 5px 5px 5px;
+}
