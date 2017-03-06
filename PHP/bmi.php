@@ -110,7 +110,7 @@ include 'pripojeni.php';
                         if (hodnoty[0].datum > odKdy) {
                             // pokud neni hodnota pro pocatecni den, vlozime ji
                             // jako prazdnou, aby graf zobrazoval pocatecni den
-                            vahaGraf.push({"x":doKdy * 1000, "y":NaN});
+                            vahaGraf.push({"x":odKdy * 1000, "y":NaN});
                         }
                         if (hodnoty[hodnoty.length - 1].datum < doKdy) {
                             // pokud neni hodnota pro konecni den, vlozime ji
