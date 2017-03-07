@@ -1,6 +1,11 @@
 <?php
 session_start();
 include 'pripojeni.php';
+if(isset($_SESSION["id"])){
+        $data = mysqli_query($connect, "SELECT vyska FROM uzivatele WHERE uzivatele.id={$_SESSION['id']}");
+        $zaznam=mysqli_fetch_array($data);
+        $vyska=$zaznam['vyska'];
+}
 ?>
 <!doctype html>
 <html>
@@ -9,6 +14,7 @@ include 'pripojeni.php';
         <title>
         </title>
         <link rel="stylesheet" href="../CSS/css.css">
+        
         <script type="text/javascript" src="../JS/moment.js"></script>
         <script type="text/javascript" src="../JS/Chart.js"></script>
         <script type="text/javascript">
@@ -86,8 +92,8 @@ include 'pripojeni.php';
                         }
                     };
                     xhttp.open("POST", "ulozVahu.php", true);
-                    
-                    var params = "id=" + getUzivatelId() + "&datum=" + zkontrolujDatum(datum).getTime()/1000 + "&vaha=" + vaha;
+
+                    var params = "id=" + getUzivatelId() + "&datum=" + zkontrolujDatum(datum).getTime() / 1000 + "&vaha=" + vaha;
                     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                     xhttp.setRequestHeader("Content-length", params.length);
                     xhttp.setRequestHeader("Connection", "close");
@@ -118,6 +124,11 @@ include 'pripojeni.php';
                 return elementId.value;
             }
             
+            function getUzivatelVyska() {
+                var elementId = document.getElementById("uzivatelVyska");
+                return elementId.value;
+            }
+            
             function ziskejVahy(odKdy, doKdy, agregace) {
                 var id = getUzivatelId();
                 var xhttp = new XMLHttpRequest();
@@ -144,7 +155,7 @@ include 'pripojeni.php';
                             vahaGraf.push(vahaPolozka);
                             var bmiPolozka = {};
                             bmiPolozka.x = vahaPolozka.x;
-                            bmiPolozka.y = prvek.vaha / (1.72 * 1.72);
+                            bmiPolozka.y = prvek.vaha / (getUzivatelVyska() * getUzivatelVyska());
                             bmiGraf.push(bmiPolozka);
                         });
                         if (vahaGraf.length === 0 || vahaGraf[0].x > odKdy) {
@@ -283,8 +294,9 @@ include 'pripojeni.php';
                     <input id="datum" type="datetime"  value="">
                     <label>Tvoje vaha:</label>
                     <input id="vaha" type="number" step="0.1" value="" >
-                    <input type="button" value="Ulozit" onclick="ulozVahu();">
+                    <input type="button" value="Uložit" onclick="ulozVahu();">
                     <input type="number" id="uzivatelId" value="<?= $id ?>" style="visibility: hidden">
+                    <input type="number" id="uzivatelVyska" value="<?= $vyska ?>" style="visibility: hidden">
                     <div id="zprava" class="hlasky" style="visibility: hidden"></div>
                 </form>
             </div>

@@ -84,7 +84,7 @@ p{
   font-family: 'Open Sans', Arial, sans-serif;
 
 }
-input[type=submit] {
+input[type=submit], [type=button]{
   width: 100%;
   background-color: #377EB5;
   color: white;
@@ -97,7 +97,7 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #2E68B2;
 }
-input[type=text], [type=number], [type=password], [type=date], [type=email], select, textarea {
+input[type=text], [type=number], [type=password], [type=date], [type=email], [type=datetime], select, textarea {
   width: 100%;
   padding: 12px 40px;
   margin: 8px 0;
@@ -205,6 +205,7 @@ text-decoration: none;
   border-radius: 4px;
   cursor: pointer;
   margin-left: 20px;
+  margin-right: 8px;
   float: right;
   
 }

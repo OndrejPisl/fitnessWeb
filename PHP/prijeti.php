@@ -21,11 +21,14 @@
   include 'fce.php';
 ?>
 <article>
-
+    <h1>Přijetí žádostí</h1>
 <?php
+            if ($_SESSION["prava"] == 1) {
+                echo "<a href='uzivatel.php' class='uzivatelodkazy'>Zpět</a>";
+                echo "<a href='sprava-uzivatelu.php' class='uzivatelodkazy'>Správa uživatelů</a>";
+            }
  echo "<table class='formprijeti'>
    <tr>
-      <th>ID</th>
      <th>Jméno</th>
      <th>Přjmení</th>
      <th>Datum narození</th>
@@ -37,12 +40,11 @@
      <th>Potvrzení</th>
 	 <th>Smazání</th>
    </tr>";
-   $data=mysqli_query($connect,"select uzivatele.id as uzivatel_id, uzivatele.jmeno, uzivatele.prijmeni, uzivatele.datum, uzivatele.email, uzivatele.tel, uzivatele.pohlavi, uzivatele.narodnost_id, uzivatele.info, narodnosti.id as narodnost_id, narodnosti.nazev as narodnost_nazev from uzivatele LEFT JOIN narodnosti ON uzivatele.narodnost_id=narodnosti.id where potvrzeni_pristupu='0' order by uzivatele.id");
+   $data=mysqli_query($connect,"select uzivatele.id as uzivatel_id, uzivatele.jmeno, uzivatele.prijmeni, uzivatele.datum, uzivatele.vyska, uzivatele.email, uzivatele.tel, uzivatele.pohlavi, uzivatele.narodnost_id, uzivatele.info, narodnosti.id as narodnost_id, narodnosti.nazev as narodnost_nazev from uzivatele LEFT JOIN narodnosti ON uzivatele.narodnost_id=narodnosti.id where potvrzeni_pristupu='0' order by uzivatele.id");
    while ($zaznam=mysqli_fetch_array($data)) {
     if($zaznam['pohlavi']==1){$pohlavi='muž';}else{$pohlavi='žena';}
     $informace = zkratitText($zaznam["info"],30);
    	echo "   <tr>
-     <td>{$zaznam["uzivatel_id"]}</td>
      <td>{$zaznam["jmeno"]}</td>
      <td>{$zaznam["prijmeni"]}</td>
      <td>{$zaznam["datum"]}</td>

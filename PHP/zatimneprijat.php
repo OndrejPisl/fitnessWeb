@@ -15,8 +15,8 @@
   include 'menu.php';
  ?>
     <article>
-        <h1> Sorry jako, jeste nejsi zeregistrovan|</h1>
-        <p>Pro aktivaci me kontaktujte</p>
+        <h1>Omlouvám se, zatím nejste přijati</h1>
+        <p>Pro aktivaci mě kontaktujte telefonicky</p>
     </article>
     <footer>
     </footer>
