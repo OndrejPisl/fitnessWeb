@@ -16,11 +16,41 @@ include 'pripojeni.php';
             var vahaGraf = [];
             var bmiGraf = [];
             var ted = new Date();
+            var dneska = new Date(ted.getFullYear(), ted.getMonth(), ted.getDate());
             var grafConfig = {
-                odKdy : (ted.getTime() - (30 * 24 * 60 * 60 * 1000))/1000,
-                doKdy : ted.getTime() / 1000, 
-                rozsah : 1 // 1 den, 2 mesic, 3 rok
+                odKdy : new Date(ted.getFullYear(), ted.getMonth(), ted.getDate()),
+                doKdy : new Date(ted.getFullYear(), ted.getMonth(), ted.getDate()), 
+                rozsah : 1, // 1 den, 2 mesic, 3 rok
+                posunODen : function (dopredu) {
+                    if (dopredu) {
+                        this.odKdy.setDate(this.odKdy.getDate() + 1);
+                        this.doKdy.setDate(this.doKdy.getDate() + 1);
+                    } else {
+                        this.odKdy.setDate(this.odKdy.getDate() - 1);
+                        this.doKdy.setDate(this.doKdy.getDate() - 1);
+                    }
+                },
+                posunOMesic : function (dopredu) {
+                    if (dopredu) {
+                        this.odKdy.setMonth(this.odKdy.getMonth() + 1);
+                        this.doKdy.setMonth(this.doKdy.getMonth() + 1);
+                    } else {
+                        this.odKdy.setMonth(this.odKdy.getMonth() - 1);
+                        this.doKdy.setMonth(this.doKdy.getMonth() - 1);
+                    }
+                },
+                posunORok : function (dopredu) {
+                    if (dopredu) {
+                        this.odKdy.setFullYear(this.odKdy.getFullYear() + 1);
+                        this.doKdy.setFullYear(this.doKdy.getFullYear() + 1);
+                    } else {
+                        this.odKdy.setFullYear(this.odKdy.getFullYear() - 1);
+                        this.doKdy.setFullYear(this.doKdy.getFullYear() - 1);
+                    }
+                }
             }
+            // prvotni nastaveni je o mesic pozdeji
+            grafConfig.odKdy.setMonth( grafConfig.odKdy.getMonth() - 1);
             var grafData = {
                 datasets: [{
                         label: "Vaha",
@@ -99,7 +129,17 @@ include 'pripojeni.php';
                         bmiGraf.length = 0;
                         hodnoty.forEach(function (prvek) {
                             var vahaPolozka = {};
-                            vahaPolozka.x = new Date(prvek.datum * 1000);
+                            switch (agregace) {
+                                case 1:
+                                    vahaPolozka.x = new Date(prvek.rok, prvek.mesic - 1, prvek.den);
+                                    break;
+                                case 2:
+                                    vahaPolozka.x = new Date(prvek.rok, prvek.mesic - 1);
+                                    break;
+                                case 3:
+                                    vahaPolozka.x = new Date(prvek.rok);
+                                    break;
+                            }
                             vahaPolozka.y = prvek.vaha;
                             vahaGraf.push(vahaPolozka);
                             var bmiPolozka = {};
@@ -107,21 +147,21 @@ include 'pripojeni.php';
                             bmiPolozka.y = prvek.vaha / (1.72 * 1.72);
                             bmiGraf.push(bmiPolozka);
                         });
-                        if (hodnoty[0].datum > odKdy) {
+                        if (vahaGraf.length === 0 || vahaGraf[0].x > odKdy) {
                             // pokud neni hodnota pro pocatecni den, vlozime ji
                             // jako prazdnou, aby graf zobrazoval pocatecni den
-                            vahaGraf.push({"x":odKdy * 1000, "y":NaN});
+                            vahaGraf.push({"x":odKdy, "y":NaN});
                         }
-                        if (hodnoty[hodnoty.length - 1].datum < doKdy) {
+                        if (vahaGraf.length === 0 || vahaGraf[vahaGraf.length - 1].x < doKdy) {
                             // pokud neni hodnota pro konecni den, vlozime ji
                             // jako prazdnou, aby graf zobrazoval cely pozadovany
                             // interval
-                            vahaGraf.push({"x":doKdy * 1000, "y":NaN});
+                            vahaGraf.push({"x":doKdy, "y":NaN});
                         }
                         chart.update();
                     }
                 };
-                xhttp.open("GET", "getVahy.php?id=" + id + "&odKdy=" + odKdy + "&doKdy=" + doKdy, true);
+                xhttp.open("GET", "getVahy.php?id=" + id + "&odKdy=" + odKdy.getTime() / 1000 + "&doKdy=" + doKdy.getTime() / 1000 + "&agregace=" + agregace, true);
                 xhttp.send();
             }
 
@@ -135,21 +175,61 @@ include 'pripojeni.php';
                     denElement.style.backgroundColor = highlight;
                     mesicElement.style.backgroundColor = originalColor;
                     rokElement.style.backgroundColor = originalColor;
+                    grafConfig.timeUnit = 'day';
+                    var ted = new Date();
+                    grafConfig.doKdy = new Date(ted.getFullYear(), ted.getMonth(), ted.getDate());
+                    grafConfig.odKdy = new Date(ted.getFullYear(), ted.getMonth(), ted.getDate());
+                    grafConfig.odKdy.setMonth(grafConfig.odKdy.getMonth() - 1);
+                    chart.options.scales.xAxes[0].time.unit = 'day';
+                    grafConfig.rozsah = 1;
+                    ziskejVahy(grafConfig.odKdy, grafConfig.doKdy, grafConfig.rozsah);
                 } else if (kam === 3) {
                     denElement.style.backgroundColor = originalColor;
                     mesicElement.style.backgroundColor = highlight;
                     rokElement.style.backgroundColor = originalColor;
+                    var ted = new Date();
+                    grafConfig.doKdy = new Date(ted.getFullYear(), ted.getMonth(), ted.getDate());
+                    grafConfig.odKdy = new Date(ted.getFullYear(), ted.getMonth(), ted.getDate());
+                    grafConfig.odKdy.setFullYear(grafConfig.odKdy.getFullYear() - 1);
+                    grafConfig.rozsah = 2;
+                    chart.options.scales.xAxes[0].time.unit = 'month';
+                    ziskejVahy(grafConfig.odKdy, grafConfig.doKdy, grafConfig.rozsah);
                 } else if (kam === 4) {
                     denElement.style.backgroundColor = originalColor;
                     mesicElement.style.backgroundColor = originalColor;
                     rokElement.style.backgroundColor = highlight;
+                    var ted = new Date();
+                    grafConfig.doKdy = new Date(ted.getFullYear(), 11, 31);
+                    grafConfig.odKdy = new Date(ted.getFullYear(), 1, 1);
+                    grafConfig.odKdy.setFullYear(grafConfig.odKdy.getFullYear() - 10);
+                    grafConfig.rozsah = 3;
+                    chart.options.scales.xAxes[0].time.unit = 'year';
+                    ziskejVahy(grafConfig.odKdy, grafConfig.doKdy, grafConfig.rozsah);
                 } else if (kam === 0) {
-                    grafConfig.odKdy = grafConfig.odKdy - 24 * 60 * 60;
-                    grafConfig.doKdy = grafConfig.doKdy - 24 * 60 * 60;
+                    switch (grafConfig.rozsah) {
+                        case 1:
+                            grafConfig.posunODen(false);
+                            break;
+                        case 2:
+                            grafConfig.posunOMesic(false);
+                            break;
+                        case 3:
+                            grafConfig.posunORok(false);
+                            break;
+                    }
                     ziskejVahy(grafConfig.odKdy, grafConfig.doKdy, grafConfig.rozsah);
                 } if (kam === 1) {
-                    grafConfig.odKdy = grafConfig.odKdy + 24 * 60 * 60;
-                    grafConfig.doKdy = grafConfig.doKdy + 24 * 60 * 60;
+                    switch (grafConfig.rozsah) {
+                        case 1:
+                            grafConfig.posunODen(true);
+                            break;
+                        case 2:
+                            grafConfig.posunOMesic(true);
+                            break;
+                        case 3:
+                            grafConfig.posunORok(true);
+                            break;
+                    }
                     ziskejVahy(grafConfig.odKdy, grafConfig.doKdy, grafConfig.rozsah);
                 }
             }
