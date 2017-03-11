@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2017 at 01:14 PM
+-- Generation Time: Mar 11, 2017 at 01:18 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -70,7 +70,6 @@ INSERT INTO `uzivatele` (`id`, `jmeno`, `prijmeni`, `datum`, `email`, `heslo`, `
 (3, 'Petr', 'Pisl', '2011-11-11', 'petrpisl@gmail.com', '140f6969d5213fd0ece03148e62e461e', '+420777471259', 1, 1, 'Jem otec Ond5eje Pi3la a tot8lne m', 0, 1),
 (5, 'Ondy', 'Pisl', '2011-11-11', 'ondy@gmail.com', '202cb962ac59075b964b07152d234b70', '777 777 777', 1, 2, 'asdasd', 0, 1),
 (6, 'tomas', 'kokos', '1592-11-11', 'tomaskokos@gmail.com', '202cb962ac59075b964b07152d234b70', '777 755 455', 1, 1, 'asdasd', 0, 1),
-(8, 'matous', 'pisl', '1111-11-11', 'matouspisl@seznam.cz', '202cb962ac59075b964b07152d234b70', '777777777', 1, 1, 'asdasd', 0, 1),
 (9, 'kolo', 'obecne', '1111-11-11', 'koloobecne', '202cb962ac59075b964b07152d234b70', '7777777777', 1, 1, 'asdasd', 0, 0),
 (10, 'asdasd', 'asdasda', '1111-11-11', 'dfdfg', 'd58e3582afa99040e27b92b13c8f2280', 'dfgdfg', 1, 1, 'dfgdfg', 0, 0),
 (11, 'asdasd', 'asdasda', '1111-11-11', 'dfdfg', 'd58e3582afa99040e27b92b13c8f2280', 'dfgdfg', 1, 1, 'dfgdfg', 0, 0);
@@ -84,7 +83,7 @@ INSERT INTO `uzivatele` (`id`, `jmeno`, `prijmeni`, `datum`, `email`, `heslo`, `
 CREATE TABLE `vahy` (
   `uzivatele_id` int(10) NOT NULL,
   `vaha` float NOT NULL,
-  `datum` int(20) NOT NULL
+  `datum` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -92,14 +91,15 @@ CREATE TABLE `vahy` (
 --
 
 INSERT INTO `vahy` (`uzivatele_id`, `vaha`, `datum`) VALUES
-(1, 90, 1488104760),
-(1, 80, 1488112440),
-(1, 85, 1488009600),
-(1, 92, 1485331200),
-(1, 40.2, 1486972800),
-(1, 75.3, 1486800000),
-(1, 75.3, 1486800000),
-(1, 70, 1486713600);
+(1, 75, '2017-02-01'),
+(1, 80.5, '2017-03-01'),
+(1, 76.2, '2017-03-02'),
+(1, 85.6, '2017-02-12'),
+(1, 65.9, '2017-02-18'),
+(1, 58, '2016-02-18'),
+(1, 72.5, '2017-03-06'),
+(1, 82.6, '2016-12-12'),
+(1, 74, '2017-01-12');
 
 --
 -- Indexes for dumped tables
