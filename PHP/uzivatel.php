@@ -1,11 +1,7 @@
 <?php
 session_start();
 include 'pripojeni.php';
-  if(!isset($_SESSION["potvrzeni_pristupu"])=='1'){
-    header("Location: prihlaseni.php");
-    exit;
 
-  }
 ?>
 <!doctype html>
 <html>

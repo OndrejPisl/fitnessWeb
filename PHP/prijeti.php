@@ -1,11 +1,7 @@
 <?php
   session_start();
   include 'pripojeni.php';
-  if(!isset($_SESSION["prava"])=='1'){
-    echo"Nemáte opravnění!";
-    exit;
 
-  }
  ?>
 <!doctype html>
 <html>

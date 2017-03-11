@@ -1,10 +1,7 @@
 <?php
 session_start();
 include 'pripojeni.php';
-  if(!isset($_SESSION["potvrzeni_pristupu"])=='1'){
-    header("Location: prihlaseni.php");
-    exit;
-  }
+
 if(isset($_SESSION["id"])){
         $data = mysqli_query($connect, "SELECT vyska FROM uzivatele WHERE uzivatele.id={$_SESSION['id']}");
         $zaznam=mysqli_fetch_array($data);
