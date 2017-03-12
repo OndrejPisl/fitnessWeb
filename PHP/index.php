@@ -15,7 +15,7 @@ include 'pripojeni.php';
         include 'menu.php';
         ?>
         <article>    <h1>Něco o mně</h1>
-            <img src="../foto/uvodka.jpg" class="uvodka" alt="uvodka.jpg, 64kB" title="uvodka" width="360" height="360">
+            <img src="../foto/uvodka.jpg" class="uvodka" alt="uvodka.jpg, 64kB" title="uvodka">
             <p>Ahoj, jmenuji se Martin Němec, je mi 27 let a chtěl bych Vám o sobě něco povědět.</p>
             <p>Ke cvičení jsem se dostal náhodou až ve věku 21 let, když jsem si koupil domů sadu činek a začal jsem cvičit základní cviky. Po delší době jsem se rozhodl navštívit fitness centrum a od té doby si nedokážu představit, že bych přestal cvičit.</p>    
             <p>V roce 2016 jsem si udělal kurz instruktora fitness a kulturistiky v Praze v trenérské škole Ronnie. Momentálně cvičím ve fitness centru Fanatic gym v Chrudimi, kde je možné si domluvit osobní tréninkovou lekci.</p>

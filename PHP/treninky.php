@@ -14,7 +14,9 @@
 <?php
   include 'menu.php';
  ?>
-    <article>      <h1>Kdy cvičíme?</h1>
+    <article>
+        <div>
+        <h1>Kdy cvičíme?</h1>
       <br>
       <div class="hodiny" style="overflow-x:auto;">
         <table>
@@ -61,6 +63,7 @@
             </th>            <td>+420 777 777 777</td>
           </tr>
         </table>
+      </div>
       </div>
     </article>
     <footer>

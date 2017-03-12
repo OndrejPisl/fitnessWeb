@@ -1,42 +1,30 @@
 <?php
-  session_start();
-  include 'pripojeni.php';
- ?>
+session_start();
+include 'pripojeni.php';
+?>
 <!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>
-    </title>
-    <link rel="stylesheet" href="../CSS/css.css">
-  </head>
-  <body>
-<?php
-  include 'menu.php';
- ?>
-    <article>    <h1>FITNESS</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras posuere aliquam aliquam. Sed sagittis in turpis in venenatis. Nulla id nisl magna. Praesent rhoncus ut nisi mollis hendrerit. Morbi eu commodo enim. Maecenas at metus mattis, lacinia arcu eget, lacinia nisl. Sed consequat ipsum et arcu aliquam finibus. Suspendisse potenti. Suspendisse tempor libero ac ex pulvinar, in convallis sapien sagittis. Aliquam lacus nulla, auctor non est pretium, faucibus aliquam odio. Phasellus eleifend sagittis ultrices. Nulla auctor porttitor ex quis aliquet. Mauris posuere eros in metus lacinia maximus.
-      </p>
-      <p>Nulla ut turpis laoreet enim viverra feugiat vestibulum a enim. Curabitur lobortis aliquam nisl vel laoreet. Donec quis ornare eros, vel placerat quam. Curabitur sodales ex et blandit scelerisque. Suspendisse nisl enim, placerat eu erat non, finibus varius justo. Vivamus nec nisi dapibus, fringilla mi at, tempor ex. Donec at nibh vel tellus sodales tincidunt eu a enim. Nunc ultricies cursus elit, eget ornare mi facilisis in. Etiam quis lacinia augue, vel semper arcu. Sed vel velit lectus. Cras vestibulum elementum mollis. Etiam eget nulla erat. Donec non nibh magna. Proin facilisis in nibh id faucibus. Morbi a purus consectetur lacus posuere ornare at et nunc. Sed rutrum, risus sit amet ornare efficitur, nibh orci elementum odio, imperdiet fringilla ex nunc quis nibh.
-      </p>
-      <p>Vestibulum tincidunt fringilla augue vitae volutpat. Aliquam at erat metus. Praesent a diam quis enim gravida tristique nec ut lacus. Suspendisse potenti. In hac habitasse platea dictumst. Fusce ligula urna, facilisis vel viverra sed, varius at tortor. Morbi euismod nisi sed urna dignissim interdum.
-      </p>
-      <p>Cras malesuada mauris sit amet massa viverra fringilla. Pellentesque viverra lectus ac augue ullamcorper, ac ultrices ex lacinia. In a magna vel sapien varius efficitur. Phasellus placerat nunc et magna porta, nec sodales nulla dictum. Morbi hendrerit libero et felis sodales aliquet. Quisque quis convallis velit. Donec quis tellus ut erat lacinia tempor eu eu ligula. Sed ac euismod purus, sit amet vulputate eros.
-      </p>
-      <p>Aliquam erat volutpat. Donec risus magna, auctor vel lacus sed, tempor porta sapien. Nunc vestibulum magna sed dignissim aliquam. Duis sollicitudin ante in velit faucibus pharetra. Vestibulum quis dignissim leo. Suspendisse tincidunt velit id nulla scelerisque maximus. Nulla et quam vel elit ornare facilisis. Maecenas faucibus nunc at molestie consectetur. Proin dictum, sapien vitae ornare iaculis, mi enim pharetra est, et dignissim ante dui vel arcu. Nulla accumsan dignissim tellus sit amet finibus. Mauris auctor ligula nec turpis ultricies ultricies. Cras lacinia tincidunt tincidunt. Vivamus at molestie diam, id commodo leo. Nulla cursus magna at fringilla maximus.
-      </p>    <h2>Pro koho je to dobré</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras posuere aliquam aliquam. Sed sagittis in turpis in venenatis. Nulla id nisl magna. Praesent rhoncus ut nisi mollis hendrerit. Morbi eu commodo enim. Maecenas at metus mattis, lacinia arcu eget, lacinia nisl. Sed consequat ipsum et arcu aliquam finibus. Suspendisse potenti. Suspendisse tempor libero ac ex pulvinar, in convallis sapien sagittis. Aliquam lacus nulla, auctor non est pretium, faucibus aliquam odio. Phasellus eleifend sagittis ultrices. Nulla auctor porttitor ex quis aliquet. Mauris posuere eros in metus lacinia maximus.
-      </p>
-      <p>Nulla ut turpis laoreet enim viverra feugiat vestibulum a enim. Curabitur lobortis aliquam nisl vel laoreet. Donec quis ornare eros, vel placerat quam. Curabitur sodales ex et blandit scelerisque. Suspendisse nisl enim, placerat eu erat non, finibus varius justo. Vivamus nec nisi dapibus, fringilla mi at, tempor ex. Donec at nibh vel tellus sodales tincidunt eu a enim. Nunc ultricies cursus elit, eget ornare mi facilisis in. Etiam quis lacinia augue, vel semper arcu. Sed vel velit lectus. Cras vestibulum elementum mollis. Etiam eget nulla erat. Donec non nibh magna. Proin facilisis in nibh id faucibus. Morbi a purus consectetur lacus posuere ornare at et nunc. Sed rutrum, risus sit amet ornare efficitur, nibh orci elementum odio, imperdiet fringilla ex nunc quis nibh.
-      </p>
-      <p>Vestibulum tincidunt fringilla augue vitae volutpat. Aliquam at erat metus. Praesent a diam quis enim gravida tristique nec ut lacus. Suspendisse potenti. In hac habitasse platea dictumst. Fusce ligula urna, facilisis vel viverra sed, varius at tortor. Morbi euismod nisi sed urna dignissim interdum.
-      </p>
-      <p>Cras malesuada mauris sit amet massa viverra fringilla. Pellentesque viverra lectus ac augue ullamcorper, ac ultrices ex lacinia. In a magna vel sapien varius efficitur. Phasellus placerat nunc et magna porta, nec sodales nulla dictum. Morbi hendrerit libero et felis sodales aliquet. Quisque quis convallis velit. Donec quis tellus ut erat lacinia tempor eu eu ligula. Sed ac euismod purus, sit amet vulputate eros.
-      </p>
-      <p>Aliquam erat volutpat. Donec risus magna, auctor vel lacus sed, tempor porta sapien. Nunc vestibulum magna sed dignissim aliquam. Duis sollicitudin ante in velit faucibus pharetra. Vestibulum quis dignissim leo. Suspendisse tincidunt velit id nulla scelerisque maximus. Nulla et quam vel elit ornare facilisis. Maecenas faucibus nunc at molestie consectetur. Proin dictum, sapien vitae ornare iaculis, mi enim pharetra est, et dignissim ante dui vel arcu. Nulla accumsan dignissim tellus sit amet finibus. Mauris auctor ligula nec turpis ultricies ultricies. Cras lacinia tincidunt tincidunt. Vivamus at molestie diam, id commodo leo. Nulla cursus magna at fringilla maximus.
-      </p>
-    </article>
-    <footer>
-    </footer>
-  </body>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+        </title>
+        <link rel="stylesheet" href="../CSS/css.css">
+    </head>
+    <body>
+        <?php
+        include 'menu.php';
+        ?>
+        <article>    <h1>FITNESS</h1>
+            <p>Jako fitness se označují sportovní aktivity i celkový životní styl mající za cíl všeobecnou tělesnou kondici, celkovou zdatnost, zlepšení držení těla, zlepšení konceptu postavy apod., při současném působení na upevňování zdraví a rozvoj síly.</p>
+            <p>Pro fitness cvičení se používají kromě tradičních činek i různé speciální stroje, trenažery apod., které jsou běžně k dispozici ve fitness centrech. Fitness se dá ale provozovat i doma, ať už se stroji, činkami a jinými pomůckami, nebo bez nich. Základním vybavením posilovny by měl být aerobní stroj a místo na zemi pro posilování, strečink a relaxaci.</p>
+            <h2>Výživa</h2>
+            <p>Ruku v ruce se cvičením a posilováním jde i správná výživa a životospráva. Není správně jíst příliš sladké, tučné či smažené potraviny, stejně jako jíst pilulky na hubnutí nebo na růst svalové hmoty. Potravinové doplňky a přípravky mívají smysl jen pro vrcholové sportovce a i ti je musí používat jen velmi opatrně.[1] Mezi potraviny, které by člověk naopak měl do svého jídelníčku zařadit, patří ovoce, zelenina, luštěniny, ořechy a semínka, celozrnné obiloviny, rýže, ryby, maso. K pití je nejvhodnější voda. Obecně bychom neměli jíst a pít průmyslově zpracované potraviny a nápoje.[2] Důležité je jíst příslušné dávky tuků, sacharidů i bílkovin. Pro růst svalové hmoty se doporučuje upřednostnit bílkoviny, ale přílišný nepoměr v přijímání těchto složek potravy může způsobit zdravotní komplikace, jelikož pro naše tělo jsou nezbytné všechny z nich.</p>
+            <h2>Pro koho je to dobré</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras posuere aliquam aliquam. Sed sagittis in turpis in venenatis. Nulla id nisl magna. Praesent rhoncus ut nisi mollis hendrerit. Morbi eu commodo enim. Maecenas at metus mattis, lacinia arcu eget, lacinia nisl. Sed consequat ipsum et arcu aliquam finibus. Suspendisse potenti. Suspendisse tempor libero ac ex pulvinar, in convallis sapien sagittis. Aliquam lacus nulla, auctor non est pretium, faucibus aliquam odio. Phasellus eleifend sagittis ultrices. Nulla auctor porttitor ex quis aliquet. Mauris posuere eros in metus lacinia maximus.
+            </p>
+            <p>Cvičení má pozitivní vliv na psychiku i fyzickou zdatnost a kondici člověka. Po pár vteřinách fyzické námahy se zvyšuje srdeční tep, začínají se spalovat sacharidy a tuky, dýcháme zhluboka, takže se svalům dostává více kyslíku. Po hodině stále tělo stále ještě spaluje rychleji, posiluje se imunitní systém. Ještě ten den svaly začnou obnovovat a posilovat, tělo se rychleji zbavuje glukózy z krve, takže se snižuje riziko srdečních chorob i diabetu, po týdnu cvičení se nám už zlepší kondice, máme silnější imunitu, nižší krevní tlak a po několika měsících už máme kromě celkově lepšího zdravotního stavu srdce a plic, zvětšení svalů, sníženého rizika onemocnění některými chorobami také nižší množství tělesného tuku a často i lepší náladu, cítíme se méně ve stresu a obecně psychický stav je lepší.</p>
+        </article>
+        <footer>
+        </footer>
+    </body>
 </html>

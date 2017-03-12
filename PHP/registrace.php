@@ -15,7 +15,7 @@ include 'pripojeni.php';
         <?php
         include 'menu.php';
         ?>
-        <article class="artreg">
+        <article>
             <div class="formregistrace">
                 <?php
                 if (isset($_POST["jmeno"])) {

@@ -1,7 +1,283 @@
 /* CSS Document */
+
+@media screen and (max-width: 1089px) {
+/* ---------------------------------------------------*/
+
 body{
     margin: 0;
     padding: 0;
+    width: 100%;
+    min-width: 300px;
+}
+
+header{
+    width: 100%;
+    height: auto;
+    background-color: #323232;
+    display: inline-block;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+header a{
+     text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    
+}
+header a:hover{
+    text-decoration: underline;
+}
+article{
+    width: 100%;
+    margin: auto;
+    text-align: left;
+}
+footer{
+    width: 100%;
+    background-color: #323232;
+    height: 40px;
+    margin: auto;
+}
+.odkazy{
+    text-align: center;
+    margin: auto;
+}
+.odkazymobil{
+    display: inline-block;
+    width: 100%;
+    margin: auto;
+    padding: 5px 0px 5px 0px;
+}
+h1{
+    /*color: #E21330;*/
+    color: #377EB5;
+    margin: auto;
+    font-size: 25px;
+    font-family: 'Russo One', 'Open Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    padding-left: 10px;
+    overflow: auto;
+}
+h2{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Russo One', 'Open Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    padding-left: 10px;
+}
+.uvodka{
+  width: 98%;
+  margin: auto;
+  padding: 0 1% 0 1%;
+}
+table {
+    border-collapse: collapse;
+    width: 98%;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+th, td {
+    text-align: left;
+    padding: 2%;
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2
+}
+p{
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.4;
+    text-align: justify;
+    margin: 25px 0;
+    width: 90%;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin: auto;
+}
+.formprihlaseni{
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    font-family: 'Open Sans', Arial, sans-serif;
+
+}
+input[type=submit], [type=button]{
+    width: 100%;
+    background-color: #377EB5;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+    background-color: #2E68B2;
+}
+input[type=text], [type=number], [type=password], [type=date], [type=email], [type=datetime], select, textarea {
+    width: 100%;
+    padding: 12px 40px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+label{
+    color: #323232;
+    font-family: 'Open Sans', Arial, sans-serif;
+
+}
+.formregistrace{
+    width: 80%;
+    margin: auto ;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    font-family: 'Open Sans', Arial, sans-serif;
+
+}
+
+textarea{
+    height:100px;
+    text-align:justify;
+}
+
+.velkefoto{
+    border: 3px solid #377EB5;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow:0px 0px 20px grey ;
+}
+.malefoto{
+    border: 3px solid #377EB5;
+    margin: 20px 10px 5px 10px;
+    background-color:rgba(0, 0, 0, 0.3) ;
+}
+
+.hlasky{
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 40px;
+    border: 1px solid #8B0000;
+    background-color: #dd1f45;
+    border-radius: 5px;
+    font-size: 19px;
+}
+.okreg{
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 40px;
+    border: 1px solid black;
+    background-color: green;
+    border-radius: 5px;
+    font-size: 19px;
+}
+.spravaodkazy{
+    text-decoration: none;
+    width: 100%;
+    background-color: #377EB5;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.spravaodkazy:hover {
+    background-color: #2E68B2;
+}
+.prijetiodkazy{
+    text-decoration: none;
+    width: 100%;
+    background-color: #377EB5;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.prijetiodkazy:hover {
+    background-color: #2E68B2;
+}
+.uzivatelodkazy{
+width: 95%;
+}
+.uzivatelodkazy > a{
+    
+    text-decoration: none;
+    background-color: #377EB5;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 1%;
+    margin-right: 1%;
+    float: right;
+
+}
+.uzivatelodkazy:hover {
+    background-color: #2E68B2;
+}
+
+.tableuzivatele{
+    margin-top: 20px;
+}
+.uzivateldiv{
+  width: 95%;
+}
+.spravaodmitnutiodkazy{
+    text-decoration: none;
+    width: 100%;
+    background-color: #dd1f45;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.spravaodmitnutiodkazy:hover{
+    background-color: #910722;
+}
+
+.tlacitkoOn {
+    font-size: 15px;
+    background-color: #ccc;
+    margin: 6px;
+    border-color: #323232;
+    border-radius: 4px;
+    padding: 6px;
+    cursor: pointer;
+    float: left;
+}
+
+.nadpisyuprostred{
+    text-align: center;
+}
+}
+/* ---------------------------------------------------------------------------*/
+
+@media screen and (min-width: 1090px) {
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 header{
@@ -14,7 +290,7 @@ header{
 }
 header a{
     text-decoration: none;
-    color: red;
+    color: white;
     font-weight: bold;
     font-size: 18px;
 }
@@ -22,9 +298,9 @@ header a:hover{
     text-decoration: underline;
 }
 article{
-    width: 960px;
+    width: 60%;
+    min-height: 800px;
     margin: auto;
-    height: 1200px;
     text-align: left;
     padding: 30px 10px 0px 10px;
 }
@@ -54,18 +330,21 @@ h1{
     margin: 0;
     font-size: 25px;
     font-family: 'Russo One', 'Open Sans', Arial, sans-serif;
-    text-transform: uppercase
+    text-transform: uppercase;
+    
 }
 h2{
     color: black;
     font-weight: bold;
     font-size: 20px;
     font-family: 'Russo One', 'Open Sans', Arial, sans-serif;
-    text-transform: uppercase
+    text-transform: uppercase;
 }
 .uvodka{
     float: right;
-    margin: 5px 5px 5px 5px;
+    margin: auto;
+    padding: 1%;
+    width: 40%;
 }
 table {
     border-collapse: collapse;
@@ -76,16 +355,19 @@ table {
 th, td {
     text-align: left;
     padding: 8px;
+    height: 40px;
 }
 
 tr:nth-child(even){
     background-color: #f2f2f2
 }
 p{
+    width: 100%;
     font-family: 'Open Sans', Arial, sans-serif;
     line-height: 1.4;
     text-align: justify;
-    margin: 25px 0;
+    margin: auto;
+    padding: 1%;
 }
 .formprihlaseni{
     width: 500px;
@@ -150,9 +432,6 @@ textarea{
     margin: 20px 10px 5px 10px;
     background-color:rgba(0, 0, 0, 0.3) ;
 }
-.galeriearticle{
-    height: 2000px;
-}
 .hlasky{
     color: white;
     margin-top: 10px;
@@ -209,6 +488,9 @@ textarea{
     background-color: #2E68B2;
 }
 .uzivatelodkazy{
+  width: 100%;
+}
+.uzivatelodkazy > a {
     text-decoration: none;
     background-color: #377EB5;
     color: white;
@@ -256,7 +538,8 @@ textarea{
 .nadpisyuprostred{
     text-align: center;
 }
-
+}
+/*
 @media screen and (min-width: 600px) and (max-width: 1023px) {
     .odkazymobil {
         width: 48%; margin: 1%;
@@ -264,26 +547,6 @@ textarea{
     header{
         height: 270px
     }
-}
+*/    /* --------------------------------------------------*/
 
-@media screen and (max-width: 600px) {
-    article{
-        width: 100%
-    }
-    header{
-        height: 200px;
 
-    }
-    .odkazymobil{
-
-        float: left;
-        overflow: auto;
-        box-sizing: border-box;
-        padding: 0.2em 1em;
-        margin: 0.2em 0;
-        width: 98%;
-        background-color: green;
-        padding-top: 0;
-    }
-
-}

@@ -21,12 +21,14 @@ if (!isset($_SESSION["prava"]) == '1') {
         ?>
         <article>
 
-            <h1>Správa uživatelů</h1>
+
             <?php
             if ($_SESSION["prava"] == 1) {
-                echo "<a href='uzivatel.php' class='uzivatelodkazy'>Zpět</a>";
-                echo "<a href='prijeti.php' class='uzivatelodkazy'>Přijetí</a>";
+                echo "<div class='uzivatelodkazy'><a href='uzivatel.php'>Zpět</a>";
+                echo "<a href='prijeti.php'>Přijetí</a></div>";
             }
+            ?><div><?php
+            echo "<h1>Správa uživatelů</h1>";
             echo "<table class='formprijeti'>
    <tr>
      <th>Jméno</th>
@@ -38,7 +40,10 @@ if (!isset($_SESSION["prava"]) == '1') {
 	 <th>Upravení</th>
 	 <th>Smazání</th>
    </tr>";
-            $data = mysqli_query($connect, "select uzivatele.id as uzivatel_id, uzivatele.jmeno, uzivatele.prijmeni, uzivatele.datum, uzivatele.vyska, uzivatele.email, uzivatele.tel, uzivatele.pohlavi, uzivatele.narodnost_id, uzivatele.info, narodnosti.id as narodnost_id, narodnosti.nazev as narodnost_nazev from uzivatele LEFT JOIN narodnosti ON uzivatele.narodnost_id=narodnosti.id where potvrzeni_pristupu='1' order by uzivatele.id");
+            $data = mysqli_query($connect, "select uzivatele.id as uzivatel_id, uzivatele.jmeno, uzivatele.prijmeni,
+            uzivatele.datum, uzivatele.vyska, uzivatele.email, uzivatele.tel, uzivatele.pohlavi, uzivatele.narodnost_id,
+            uzivatele.info, narodnosti.id as narodnost_id, narodnosti.nazev as narodnost_nazev from uzivatele LEFT JOIN
+            narodnosti ON uzivatele.narodnost_id=narodnosti.id where potvrzeni_pristupu='1' order by uzivatele.id");
             while ($zaznam = mysqli_fetch_array($data)) {
                 if ($zaznam['pohlavi'] == 1) {
                     $pohlavi = 'muž';
@@ -65,7 +70,7 @@ if (!isset($_SESSION["prava"]) == '1') {
             ?>
 
         </table>
-
+</div>
     </article>
     <footer>
     </footer>
