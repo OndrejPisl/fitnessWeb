@@ -159,11 +159,17 @@ textarea{
     border: 3px solid #377EB5;
     border-radius: 10px 10px 10px 10px;
     box-shadow:0px 0px 20px grey ;
+    width: 95%;
+    margin: 2%;
+    height: auto;
 }
 .malefoto{
     border: 3px solid #377EB5;
     margin: 20px 10px 5px 10px;
     background-color:rgba(0, 0, 0, 0.3) ;
+    width: 44%;
+    margin: 2%;
+    height: auto;
 }
 
 .hlasky{
@@ -354,8 +360,9 @@ h2{
 .uvodka{
     float: right;
     margin: auto;
-    padding: 1%;
     width: 40%;
+    padding: 1%;
+    
 }
 table {
     border-collapse: collapse;
@@ -437,11 +444,16 @@ textarea{
     border: 3px solid #377EB5;
     border-radius: 10px 10px 10px 10px;
     box-shadow:0px 0px 20px grey ;
+    width: 600px;
+    height: 350px;
+
 }
 .malefoto{
     border: 3px solid #377EB5;
     margin: 20px 10px 5px 10px;
     background-color:rgba(0, 0, 0, 0.3) ;
+    width: 200px;
+    height: 150px;
 }
 .hlasky{
     color: white;

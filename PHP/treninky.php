@@ -56,8 +56,8 @@
           <tr>
             <th>E-mail:
             </th>
-            <th>pojdtecvicit@seznam.cz
-            </th>
+            <td>pojdtecvicit@seznam.cz
+            </td>
           </tr>
           <tr>
             <th>Tel.:

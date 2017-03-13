@@ -12,17 +12,27 @@ include 'pripojeni.php';
 
         <script type="text/javascript">
 
-            var pocet = 7;      // celkový počet fotek
+            var pocet = 4;      // celkový počet fotek
             var cf = 1;         // globální proměnná - číslo fotografie
 
-            function zobrazB(c) {
+            function zobrazBiceps(c) {
                 cf = c;               // nastavení globální proměnné
-                document.getElementById("fbiceps").src = "../foto/cviky/foto" + c + ".jpg";
+                document.getElementById("biceps").src = "../foto/svaly/biceps/biceps" + c + ".jpg";
                 /*document.getElementsByClass[0]("fotka").src("foto/foto1/foto"+c+".jpg");   -- pokud chci použít class místo fotka*/
             }
-            function zobrazT(q) {
+            function zobrazPrsa(q) {
                 cf = q;               // nastavení globální proměnné
-                document.getElementById("ftriceps").src = "../foto/cviky/foto" + q + ".jpg";
+                document.getElementById("prsa").src = "../foto/svaly/prsa/prsa" + q + ".jpg";
+                /*document.getElementsByClass[0]("fotka").src("foto/foto1/foto"+c+".jpg");   -- pokud chci použít class místo fotka*/
+            }
+            function zobrazHamstr(h) {
+                cf = h;               // nastavení globální proměnné
+                document.getElementById("hamstr").src = "../foto/svaly/hamstr/hamstr" + h + ".jpg";
+                /*document.getElementsByClass[0]("fotka").src("foto/foto1/foto"+c+".jpg");   -- pokud chci použít class místo fotka*/
+            }
+            function zobrazZada(z) {
+                cf = z;               // nastavení globální proměnné
+                document.getElementById("zada").src = "../foto/svaly/zada/zada" + z + ".jpg";
                 /*document.getElementsByClass[0]("fotka").src("foto/foto1/foto"+c+".jpg");   -- pokud chci použít class místo fotka*/
             }
         </script>
@@ -35,31 +45,53 @@ include 'pripojeni.php';
         ?>
         <article  class="galeriearticle">
             <h1>CVIKY</h1>
-            <h2>Dřep</h2>
+            <h2>Biceps</h2>
             <br>
-            <img src="../foto/cviky/foto1.jpg" class="velkefoto" id="fbiceps" alt="foto1.jpg, 6,2kB" title="foto1" width="500" height="400">
+            <img src="../foto/svaly/biceps/biceps0.jpg" class="velkefoto" id="biceps">
             <br>
             <script type="text/javascript">
-                var pocet = 7;
-                for (i = 1; i <= pocet; i++) {
-                    document.write("<img src='../foto/cviky/nahledy/foto" + i + ".jpg' class='malefoto' onclick='zobrazB(" + i + ")' alt='foto1.jpg, 1,9kB' title='foto1' width='143' height='100'>");
+                for (i = 0; i <= pocet; i++) {
+                    document.write("<img src='../foto/svaly/biceps/nahledy/biceps" + i + ".jpg' class='malefoto' onclick='zobrazBiceps(" + i + ")'>");
                 }
 
             </script>
-            <p>Dřep je oprávněně nazýván králem cviků. Je to cvik, který působí komplexně na Vaše tělo, takže ačkoliv primárně je zaměřen na nohy, roste objem celého těla.</p>
+            <p>Dvojhlavý sval pažní (m. biceps brachii) je kosterním svalem ležícím na přední straně nadloktí, je ohybačem loketního kloubu a natahovačem kloubu ramenního. Je tedy antagonistou trojhlavého svalu, který je natahovačem loketního kloubu.</p>
+            <h2>Prsa</h2>
             <br>
-            <h2>Tlaky s jednoručními činkami</h2>
-            <br>
-            <img src="../foto/cviky/foto1.jpg"  class="velkefoto" id="ftriceps" alt="foto1.jpg, 6,2kB" title="foto1" width="500" height="400">
+            <img src="../foto/svaly/prsa/prsa0.jpg"  class="velkefoto" id="prsa" >
             <br>
             <script type="text/javascript">
 
-                for (i = 1; i <= pocet; i++) {
-                    document.write("<img src='../foto/cviky/nahledy/foto" + i + ".jpg' class='malefoto' onclick='zobrazT(" + i + ")' alt='foto1.jpg, 1,9kB' title='foto1' width='143' height='100'>");
+                for (i = 0; i <= pocet; i++) {
+                    document.write("<img src='../foto/svaly/prsa/nahledy/prsa" + i + ".jpg' class='malefoto' onclick='zobrazPrsa(" + i + ")'>");
                 }
 
             </script>
-            <p>Obdobou BENCH-PRESSu, ale za použítí jednoručních činek, jsou tlaky s jednoručními činkami.
+            <p>Prsní svaly jsou dvojího typu: velký prsní sval (musculus pectoralis major) a malý prsní sval (musculus pectoralis minor).</p>
+            <p>Patří mezi největší ploché svaly v těle, začíná od vnitřní třetiny klíčku (část klíčková). Od kosti hrudní a přilehlých chrupavek pravých žeber (část hrudníko-žeberní) a od pochvy přímého svalu břišního (část břišní). Z tohoto začátku se masité snopce sbíhají k podpažní jamce, jejíž přední ohraničení tvoří úponová část svalu.</p>
+            <h2>Hamstringy</h2>
+            <img src="../foto/svaly/hamstr/hamstr0.jpg"  class="velkefoto" id="hamstr" >
+            <br>
+            <script type="text/javascript">
+
+                for (i = 0; i <= pocet; i++) {
+                    document.write("<img src='../foto/svaly/hamstr/nahledy/hamstr" + i + ".jpg' class='malefoto' onclick='zobrazHamstr(" + i + ")'>");
+                }
+            </script>
+            <p>Čtyřhlavý sval stehenní (quadriceps femoris) je velká skupina svalů která je na přední straně stehna. Je to extenzorový sval kolene, tzn, že napíná koleno. Vytváří obrovskou masu na přední straně femuru (stehenní kosti).</p>
+            <h2>Záda</h2>
+            <img src="../foto/svaly/zada/zada0.jpg"  class="velkefoto" id="zada" >
+            <br>
+            <script type="text/javascript">
+                for (i = 0; i <= pocet; i++) {
+                    document.write("<img src='../foto/svaly/zada/nahledy/zada" + i + ".jpg' class='malefoto' onclick='zobrazZada(" + i + ")'>");
+                }
+            </script>
+            <p>Trapezoid, neboli sval trapézový či kápový sval (podle svého tvaru), leží ze zádových svalů nejpovrchněji. Má tvar nepravidelného čtyřúhelníku, jednotlivé poloviny svalu mají tvar trojúhelníku. Začíná od zevního hrbolu týlního, prostřednictvím šíjového vazu od trnů všech obratlů krčních a hrudních. Upíná se na rameni. Podle průběhu svalových snopců se dělí na 3 části: Horní sestupnou, prostřední vodorovnou a dolní vzestupnou.</p>
+           <!-- 
+                       <p>Dřep je oprávněně nazýván králem cviků. Je to cvik, který působí komplexně na Vaše tělo, takže ačkoliv primárně je zaměřen na nohy, roste objem celého těla.</p>
+            
+           <p>Obdobou BENCH-PRESSu, ale za použítí jednoručních činek, jsou tlaky s jednoručními činkami.
                 Výhodou tohoto cviku je větší dráha pohybu, neboť zde nejste limitování žerdí olympijské tyče zastavující se o hrudník.
                 S jednoručkami můžete ještě níže a zefektivnit tak Vaše snažení.
             </p>
@@ -80,7 +112,7 @@ include 'pripojeni.php';
             <p>Francouzský tlak je jedním z nejvíce používaných cviků na procvičení tricepsu.
                 Jeho obliba je veliká diky jeho mnohostranné cvičitelnosti.
                 Dá se totiž cvičit v leže, v sedě i ve stoje a to jak s velou činkou, tak i s EZ-tyčí, či jednoručkami.
-            </p>
+            </p> -->
         </article>
         <footer>
         </footer>
