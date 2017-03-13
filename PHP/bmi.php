@@ -279,6 +279,7 @@ if(isset($_SESSION["id"])){
 
 
         <article>
+            <div class="uzivatelodkazy"><a href="uzivatel.php">Zpět</a></div>
             <div>
                 <canvas id="bmiChart" width="400" height="150"></canvas>
                 <div>

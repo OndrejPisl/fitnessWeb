@@ -22,6 +22,7 @@ include 'pripojeni.php';
                 echo "<a href='sprava-uzivatelu.php'>Správa uživatelů</a></div>";
             }
       ?>
+        <div class="uzivatelodkazy"><a href="bmi.php">BMI</a></div>
       <div>
 <?php
             $data = mysqli_query($connect, "select uzivatele.id as uzivatel_id, uzivatele.jmeno, uzivatele.prijmeni, uzivatele.datum, uzivatele.email, uzivatele.tel, uzivatele.pohlavi, uzivatele.narodnost_id, uzivatele.info, narodnosti.id as narodnost_id, narodnosti.nazev as narodnost_nazev from uzivatele LEFT JOIN narodnosti ON uzivatele.narodnost_id=narodnosti.id where uzivatele.id='{$_SESSION["id"]}'");
