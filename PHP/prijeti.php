@@ -21,8 +21,8 @@
     <h1>Přijetí žádostí</h1>
 <?php
             if ($_SESSION["prava"] == 1) {
-                echo "<a href='uzivatel.php' class='uzivatelodkazy'>Zpět</a>";
-                echo "<a href='sprava-uzivatelu.php' class='uzivatelodkazy'>Správa uživatelů</a>";
+                echo "<div class='uzivatelodkazy'><a href='uzivatel.php'>Zpět</a>";
+                echo "<a href='sprava-uzivatelu.php'>Správa uživatelů</a></div>";
             }
  echo "<table class='formprijeti'>
    <tr>
@@ -68,6 +68,6 @@
 </article>
     <footer>
     </footer>
-    </div>>
+    </div>
 </body>
 </html>

@@ -8,6 +8,7 @@ body{
     padding: 0;
     width: 100%;
     min-width: 300px;
+    font-size: 1.3em;
 }
 
 header{
@@ -17,7 +18,7 @@ header{
     display: inline-block;
     padding-top: 30px;
     padding-bottom: 30px;
-
+    margin-bottom: 10px;
 }
 header a{
      text-decoration: none;

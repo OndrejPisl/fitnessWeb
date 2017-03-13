@@ -68,13 +68,13 @@ if (!isset($_SESSION["prava"]) == '1') {
                 $update = "UPDATE `fitness`.`uzivatele` SET `potvrzeni_pristupu` = '1' WHERE `uzivatele`.`id` = {$zaznam["id"]}";
                 $dotaz_update = mysqli_query($connect, $update);
             }
+            echo "</table>";
             ?>
 
-        </table>
 </div>
     </article>
     <footer>
     </footer>
-        </div>>
+        </div>
 </body>
 </html>
