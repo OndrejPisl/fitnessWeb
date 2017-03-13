@@ -27,6 +27,7 @@ if (!isset($_SESSION["prava"]) == '1') {
     ?>
 
     <body>
+                <div class="barva">
         <article>
 
             <?php
@@ -66,8 +67,9 @@ if (!isset($_SESSION["prava"]) == '1') {
                 <textarea name="info" rows="5" cols="50"><?php echo $lide['info']; ?></textarea><br>
                 <input type="hidden" name="check">
                 <input type="submit" value="Upravit">
+            </form>
 
                 </article>
-            </form>
+                </div>
     </body>
 </html>

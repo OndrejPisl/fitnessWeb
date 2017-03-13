@@ -11,6 +11,7 @@ include 'pripojeni.php';
     <link rel="stylesheet" href="../CSS/css.css">
   </head>
   <body>
+      <div class="barva">
 <?php
         include 'menu.php';
             ?>
@@ -89,5 +90,6 @@ include 'pripojeni.php';
     </article>
     <footer>
     </footer>
+      </div>
   </body>
 </html>

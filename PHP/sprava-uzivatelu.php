@@ -15,6 +15,7 @@ if (!isset($_SESSION["prava"]) == '1') {
 
     </head>
     <body>
+        <div class="barva">
         <?php
         include 'menu.php';
         include 'fce.php';
@@ -74,5 +75,6 @@ if (!isset($_SESSION["prava"]) == '1') {
     </article>
     <footer>
     </footer>
+        </div>>
 </body>
 </html>

@@ -268,6 +268,7 @@ if(isset($_SESSION["id"])){
 
     </head>
     <body>
+                <div class="barva">
         <?php
         include 'menu.php';
         $id = $_SESSION["id"];
@@ -302,5 +303,7 @@ if(isset($_SESSION["id"])){
                 </form>
             </div>
         </article>
+                    <footer></footer>
+                </div>
     </body>
 </html>

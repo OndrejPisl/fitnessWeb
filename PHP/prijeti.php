@@ -12,6 +12,7 @@
     
   </head>
 <body>
+    <div class="barva">
 <?php
   include 'menu.php';
   include 'fce.php';
@@ -67,5 +68,6 @@
 </article>
     <footer>
     </footer>
+    </div>>
 </body>
 </html>

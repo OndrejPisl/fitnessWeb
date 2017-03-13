@@ -278,6 +278,11 @@ body{
     margin: 0;
     padding: 0;
     width: 100%;
+    background-image: url(../foto/pozadiFitness.jpg);
+
+}
+.barva{
+      background-color: rgba(255, 255, 255, 0.95);  
 }
 
 header{
@@ -285,7 +290,8 @@ header{
     background-color: #323232;
     height: 60px;
     display: inline-block;
-    padding-top: 60px;
+    padding-top: 40px;
+    padding-bottom: 10px;
     font-family: 'Russo One', 'Open Sans', Arial, sans-serif;
 }
 header a{
@@ -293,6 +299,7 @@ header a{
     color: white;
     font-weight: bold;
     font-size: 18px;
+
 }
 header a:hover{
     text-decoration: underline;
@@ -311,7 +318,6 @@ footer{
     float: left;
 }
 .odkazy{
-
     text-align: center;
     padding: 0;
     margin: auto;

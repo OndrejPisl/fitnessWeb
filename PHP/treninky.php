@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../CSS/css.css">
   </head>
   <body>
+              <div class="barva">
 <?php
   include 'menu.php';
  ?>
@@ -68,5 +69,6 @@
     </article>
     <footer>
     </footer>
+      </div>
   </body>
 </html>

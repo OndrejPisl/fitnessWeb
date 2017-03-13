@@ -11,7 +11,7 @@ include 'pripojeni.php';
         <link rel="stylesheet" href="../CSS/css.css">
     </head>
     <body>
-
+<div class="barva">
         <?php
         include 'menu.php';
         ?>
@@ -135,5 +135,6 @@ while ($zaznam = mysqli_fetch_array($data)) {
         </article>
         <footer>
         </footer>
+</div>
     </body>
 </html>
