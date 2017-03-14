@@ -7,6 +7,11 @@ if(isset($_SESSION["id"])){
         $zaznam=mysqli_fetch_array($data);
         $vyska=$zaznam['vyska'];
 }
+if(isset($_SESSION["potvrzeni_pristupu"])){
+    if($_SESSION["potvrzeni_pristupu"] == "0")header ("Location: zatimneprijat.php"); 
+}
+
+if(!isset($_SESSION["email"]))header ("Location: prihlaseni.php"); 
 ?>
 <!doctype html>
 <html>

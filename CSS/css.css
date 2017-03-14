@@ -38,6 +38,7 @@ article{
     width: 100%;
     margin: auto;
     text-align: left;
+    min-height: 80vh;
 }
 footer{
     width: 100%;
@@ -82,6 +83,7 @@ table {
     border-collapse: collapse;
     width: 98%;
     font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 15px;
 }
 
 th, td {
@@ -317,7 +319,7 @@ header a:hover{
 }
 article{
     width: 60%;
-    min-height: 800px;
+    min-height: 100vh;
     margin: auto;
     text-align: left;
     padding: 30px 10px 0px 10px;

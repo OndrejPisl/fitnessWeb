@@ -76,7 +76,7 @@ include 'pripojeni.php';
                         if ($dotaz) {
                             echo "<div class='okreg'>Data byla vložena</div>\n";
                         } else {
-                            echo "<h2>Vše OK, vyčkejte na potvrzení.</h2>\n";
+                            echo "<h2>Nepovedlo se odeslat žádost.</h2>\n";
                         }
                     }
                 }

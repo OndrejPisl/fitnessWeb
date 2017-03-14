@@ -1,6 +1,10 @@
 <?php
 session_start();
 include 'pripojeni.php';
+if(isset($_SESSION["potvrzeni_pristupu"])){
+    if($_SESSION["potvrzeni_pristupu"] == "0")header ("Location: zatimneprijat.php"); 
+}
+if(!isset($_SESSION["email"]))header ("Location: prihlaseni.php"); 
 ?>
 <!doctype html>
 <html>
@@ -65,6 +69,7 @@ include 'pripojeni.php';
             echo "</div>";}
                     ?>
         <form method="post">
+           
 <textarea name="zprava"></textarea>
           <input type="submit" value="Odeslat">
         </form>

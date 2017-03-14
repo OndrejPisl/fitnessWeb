@@ -32,6 +32,7 @@ include 'pripojeni.php';
                             $_SESSION["email"] = $zaznam["email"];
                             $_SESSION["prava"] = $zaznam["prava"];
                             $_SESSION["id"] = $zaznam["id"];
+                            $_SESSION["potvrzeni_pristupu"] = $zaznam["potvrzeni_pristupu"];
                             //echo"uzivatel {$_SESSION["email"]} prihlasen";
                             if ($zaznam["potvrzeni_pristupu"] == "0") {
                                 header("Location: zatimneprijat.php");

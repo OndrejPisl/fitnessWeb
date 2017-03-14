@@ -32,9 +32,9 @@ if (!isset($_SESSION["prava"]) == '1') {
 
             <?php
             if (isset($_POST['check'])) {
-
+//UPDATE `fitness`.`uzivatele` SET `jmeno` = '', `prijmeni` = '', `datum` = '', `vyska` = '', `email` = '', `heslo` = '', `tel` = '', `pohlavi` = '', `narodnost_id` = '', `info` = '', `prava` = '', `potvrzeni_pristupu` = '' WHERE `uzivatele`.`id` = 10;
                 if ($_POST['jmeno'] != "" && $_POST['prijmeni'] != "") {
-                    $dotaz = "update uzivatele set jmeno='{$_POST['jmeno']}', prijmeni='{$_POST['prijmeni']}' where uzivatele.id = {$_GET['id']}";
+                    $dotaz = "update uzivatele set jmeno='{$_POST['jmeno']}', prijmeni='{$_POST['prijmeni']}', vyska='{$_POST['vyska']}', datum='{$_POST['datum']}', email='{$_POST['email']}', tel='{$_POST['tel']}', info='{$_POST['info']}' where uzivatele.id = {$_GET['id']}";
                     $vypis = mysqli_query($connect, $dotaz);
                     if (!$vypis) {
                         echo mysqli_error($connect);
@@ -62,7 +62,7 @@ if (!isset($_SESSION["prava"]) == '1') {
                 <input type="email" name="email" value="<?php echo $lide['email']; ?>"><br>
 
                 <label>Telefoní číslo:</label>
-                <input type="text" name="telefon" value="<?php echo $lide['tel']; ?>"><br>
+                <input type="text" name="tel" value="<?php echo $lide['tel']; ?>"><br>
 
                 <textarea name="info" rows="5" cols="50"><?php echo $lide['info']; ?></textarea><br>
                 <input type="hidden" name="check">
