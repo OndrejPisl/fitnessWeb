@@ -9,7 +9,7 @@ include 'pripojeni.php';
         <title>
         </title>
         <link rel="stylesheet" href="../CSS/css.css">
-
+        <link rel="shortcut icon" href="../foto/favicon.bmp" type="image/x-icon">
         <script type="text/javascript">
 
             var pocet = 4;      // celkový počet fotek

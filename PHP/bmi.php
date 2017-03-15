@@ -2,16 +2,18 @@
 session_start();
 include 'pripojeni.php';
 
-if(isset($_SESSION["id"])){
-        $data = mysqli_query($connect, "SELECT vyska FROM uzivatele WHERE uzivatele.id={$_SESSION['id']}");
-        $zaznam=mysqli_fetch_array($data);
-        $vyska=$zaznam['vyska'];
+if (isset($_SESSION["id"])) {
+    $data = mysqli_query($connect, "SELECT vyska FROM uzivatele WHERE uzivatele.id={$_SESSION['id']}");
+    $zaznam = mysqli_fetch_array($data);
+    $vyska = $zaznam['vyska'];
 }
-if(isset($_SESSION["potvrzeni_pristupu"])){
-    if($_SESSION["potvrzeni_pristupu"] == "0")header ("Location: zatimneprijat.php"); 
+if (isset($_SESSION["potvrzeni_pristupu"])) {
+    if ($_SESSION["potvrzeni_pristupu"] == "0")
+        header("Location: zatimneprijat.php");
 }
 
-if(!isset($_SESSION["email"]))header ("Location: prihlaseni.php"); 
+if (!isset($_SESSION["email"]))
+    header("Location: prihlaseni.php");
 ?>
 <!doctype html>
 <html>
@@ -20,7 +22,7 @@ if(!isset($_SESSION["email"]))header ("Location: prihlaseni.php");
         <title>
         </title>
         <link rel="stylesheet" href="../CSS/css.css">
-        
+        <link rel="shortcut icon" href="../foto/favicon.bmp" type="image/x-icon">
         <script type="text/javascript" src="../JS/moment.js"></script>
         <script type="text/javascript" src="../JS/Chart.js"></script>
         <script type="text/javascript">
@@ -30,10 +32,10 @@ if(!isset($_SESSION["email"]))header ("Location: prihlaseni.php");
             var ted = new Date();
             var dneska = new Date(ted.getFullYear(), ted.getMonth(), ted.getDate());
             var grafConfig = {
-                odKdy : new Date(ted.getFullYear(), ted.getMonth(), ted.getDate()),
-                doKdy : new Date(ted.getFullYear(), ted.getMonth(), ted.getDate()), 
-                rozsah : 1, // 1 den, 2 mesic, 3 rok
-                posunODen : function (dopredu) {
+                odKdy: new Date(ted.getFullYear(), ted.getMonth(), ted.getDate()),
+                doKdy: new Date(ted.getFullYear(), ted.getMonth(), ted.getDate()),
+                rozsah: 1, // 1 den, 2 mesic, 3 rok
+                posunODen: function (dopredu) {
                     if (dopredu) {
                         this.odKdy.setDate(this.odKdy.getDate() + 1);
                         this.doKdy.setDate(this.doKdy.getDate() + 1);
@@ -42,7 +44,7 @@ if(!isset($_SESSION["email"]))header ("Location: prihlaseni.php");
                         this.doKdy.setDate(this.doKdy.getDate() - 1);
                     }
                 },
-                posunOMesic : function (dopredu) {
+                posunOMesic: function (dopredu) {
                     if (dopredu) {
                         this.odKdy.setMonth(this.odKdy.getMonth() + 1);
                         this.doKdy.setMonth(this.doKdy.getMonth() + 1);
@@ -51,7 +53,7 @@ if(!isset($_SESSION["email"]))header ("Location: prihlaseni.php");
                         this.doKdy.setMonth(this.doKdy.getMonth() - 1);
                     }
                 },
-                posunORok : function (dopredu) {
+                posunORok: function (dopredu) {
                     if (dopredu) {
                         this.odKdy.setFullYear(this.odKdy.getFullYear() + 1);
                         this.doKdy.setFullYear(this.doKdy.getFullYear() + 1);
@@ -62,7 +64,7 @@ if(!isset($_SESSION["email"]))header ("Location: prihlaseni.php");
                 }
             }
             // prvotni nastaveni je o mesic pozdeji
-            grafConfig.odKdy.setMonth( grafConfig.odKdy.getMonth() - 1);
+            grafConfig.odKdy.setMonth(grafConfig.odKdy.getMonth() - 1);
             var grafData = {
                 datasets: [{
                         label: "Vaha",
@@ -129,12 +131,12 @@ if(!isset($_SESSION["email"]))header ("Location: prihlaseni.php");
                 var elementId = document.getElementById("uzivatelId");
                 return elementId.value;
             }
-            
+
             function getUzivatelVyska() {
                 var elementId = document.getElementById("uzivatelVyska");
                 return elementId.value;
             }
-            
+
             function ziskejVahy(odKdy, doKdy, agregace) {
                 var id = getUzivatelId();
                 var xhttp = new XMLHttpRequest();
@@ -167,13 +169,13 @@ if(!isset($_SESSION["email"]))header ("Location: prihlaseni.php");
                         if (vahaGraf.length === 0 || vahaGraf[0].x > odKdy) {
                             // pokud neni hodnota pro pocatecni den, vlozime ji
                             // jako prazdnou, aby graf zobrazoval pocatecni den
-                            vahaGraf.push({"x":odKdy, "y":NaN});
+                            vahaGraf.push({"x": odKdy, "y": NaN});
                         }
                         if (vahaGraf.length === 0 || vahaGraf[vahaGraf.length - 1].x < doKdy) {
                             // pokud neni hodnota pro konecni den, vlozime ji
                             // jako prazdnou, aby graf zobrazoval cely pozadovany
                             // interval
-                            vahaGraf.push({"x":doKdy, "y":NaN});
+                            vahaGraf.push({"x": doKdy, "y": NaN});
                         }
                         chart.update();
                     }
@@ -235,7 +237,8 @@ if(!isset($_SESSION["email"]))header ("Location: prihlaseni.php");
                             break;
                     }
                     ziskejVahy(grafConfig.odKdy, grafConfig.doKdy, grafConfig.rozsah);
-                } if (kam === 1) {
+                }
+                if (kam === 1) {
                     switch (grafConfig.rozsah) {
                         case 1:
                             grafConfig.posunODen(true);
@@ -273,43 +276,43 @@ if(!isset($_SESSION["email"]))header ("Location: prihlaseni.php");
 
     </head>
     <body>
-                <div class="barva">
-        <?php
-        include 'menu.php';
-        $id = $_SESSION["id"];
-        if ($id == null) {
-            header("Location: prihlaseni.php");
-        }
-        ?>
+        <div class="barva">
+            <?php
+            include 'menu.php';
+            $id = $_SESSION["id"];
+            if ($id == null) {
+                header("Location: prihlaseni.php");
+            }
+            ?>
 
 
-        <article>
-            <div class="uzivatelodkazy"><a href="uzivatel.php">Zpět</a></div>
-            <div>
-                <canvas id="bmiChart" width="400" height="150"></canvas>
+            <article>
+                <div class="uzivatelodkazy"><a href="uzivatel.php">Zpět</a></div>
                 <div>
-                    <div id="posunZpet" class="tlacitkoOn" onclick="posunGraf(0);">&lt;</div>
-                    <div id="posunDalsi" class="tlacitkoOn" onclick="posunGraf(1);">&gt;</div>
-                    <div id="den" class="tlacitkoOn" onclick="posunGraf(2);" style = "background-color: #666;">Den</div>
-                    <div id="mesic" class="tlacitkoOn" onclick="posunGraf(3);">Mesic</div>
-                    <div id="rok" class="tlacitkoOn" onclick="posunGraf(4);">Rok</div>
+                    <canvas id="bmiChart" width="400" height="150"></canvas>
+                    <div>
+                        <div id="posunZpet" class="tlacitkoOn" onclick="posunGraf(0);">&lt;</div>
+                        <div id="posunDalsi" class="tlacitkoOn" onclick="posunGraf(1);">&gt;</div>
+                        <div id="den" class="tlacitkoOn" onclick="posunGraf(2);" style = "background-color: #666;">Den</div>
+                        <div id="mesic" class="tlacitkoOn" onclick="posunGraf(3);">Mesic</div>
+                        <div id="rok" class="tlacitkoOn" onclick="posunGraf(4);">Rok</div>
+                    </div>
                 </div>
-            </div>
-            <br /> <br />
-            <div style="float: right"> 
-                <form>
-                    <label>Datum:</label>
-                    <input id="datum" type="datetime"  value="">
-                    <label>Tvoje vaha:</label>
-                    <input id="vaha" type="number" step="0.1" value="" >
-                    <input type="button" value="Uložit" onclick="ulozVahu();">
-                    <input type="number" id="uzivatelId" value="<?= $id ?>" style="visibility: hidden">
-                    <input type="number" id="uzivatelVyska" value="<?= $vyska ?>" style="visibility: hidden">
-                    <div id="zprava" class="hlasky" style="visibility: hidden"></div>
-                </form>
-            </div>
-        </article>
-                    <footer></footer>
+                <br /> <br />
+                <div style="float: right"> 
+                    <form>
+                        <label>Datum:</label>
+                        <input id="datum" type="datetime"  value="">
+                        <label>Tvoje vaha:</label>
+                        <input id="vaha" type="number" step="0.1" value="" >
+                        <input type="button" value="Uložit" onclick="ulozVahu();">
+                        <input type="number" id="uzivatelId" value="<?= $id ?>" style="visibility: hidden">
+                        <input type="number" id="uzivatelVyska" value="<?= $vyska ?>" style="visibility: hidden">
+                        <div id="zprava" class="hlasky" style="visibility: hidden"></div>
+                    </form>
                 </div>
+            </article>
+            <footer></footer>
+        </div>
     </body>
 </html>
