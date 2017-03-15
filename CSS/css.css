@@ -38,7 +38,7 @@
         width: 100%;
         margin: auto;
         text-align: left;
-        min-height: 80vh;
+        min-height: 100vh;
     }
     footer{
         width: 100%;
@@ -226,16 +226,16 @@
     .prijetiodkazy:hover {
         background-color: #2E68B2;
     }
-   /* .uzivatelodkazy{
-        width: 95%;
-    }*/
+    /* .uzivatelodkazy{
+         width: 95%;
+     }*/
     .uzivatelodkazy{
         width: 90%;
         text-decoration: none;
         background-color: #377EB5;
         color: white;
-      /*  padding: 14px 20px;*/
-        
+        /*  padding: 14px 20px;*/
+
         padding-left: 15px;
         padding: 5px;
         border: none;
@@ -289,6 +289,12 @@
     }
     .formprijeti{
         overflow-x: auto;
+    }
+    .editacetabulka{
+        margin: 1%;
+    }
+    bmiart{
+        min-height: 1000px;
     }
 }
 /* ---------------------------------------------------------------------------*/
@@ -521,9 +527,9 @@
         background-color: #2E68B2;
     }
     .uzivatelodkazy{
-        width: 100%;
+
     }
-    .uzivatelodkazy > a {
+    .uzivatelodkazy{
         text-decoration: none;
         background-color: #377EB5;
         color: white;

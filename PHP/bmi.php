@@ -286,18 +286,18 @@ if (!isset($_SESSION["email"]))
             ?>
 
 
-            <article>
-                <div class="uzivatelodkazy"><a href="uzivatel.php">Zpět</a></div>
+            <article  class="bmiart">
+                <a href="uzivatel.php"  class="uzivatelodkazy">Zpět</a>
+
+                <canvas id="bmiChart" width="400" height="150"></canvas>
                 <div>
-                    <canvas id="bmiChart" width="400" height="150"></canvas>
-                    <div>
-                        <div id="posunZpet" class="tlacitkoOn" onclick="posunGraf(0);">&lt;</div>
-                        <div id="posunDalsi" class="tlacitkoOn" onclick="posunGraf(1);">&gt;</div>
-                        <div id="den" class="tlacitkoOn" onclick="posunGraf(2);" style = "background-color: #666;">Den</div>
-                        <div id="mesic" class="tlacitkoOn" onclick="posunGraf(3);">Mesic</div>
-                        <div id="rok" class="tlacitkoOn" onclick="posunGraf(4);">Rok</div>
-                    </div>
+                    <div id="posunZpet" class="tlacitkoOn" onclick="posunGraf(0);">&lt;</div>
+                    <div id="posunDalsi" class="tlacitkoOn" onclick="posunGraf(1);">&gt;</div>
+                    <div id="den" class="tlacitkoOn" onclick="posunGraf(2);" style = "background-color: #666;">Den</div>
+                    <div id="mesic" class="tlacitkoOn" onclick="posunGraf(3);">Mesic</div>
+                    <div id="rok" class="tlacitkoOn" onclick="posunGraf(4);">Rok</div>
                 </div>
+
                 <br /> <br />
                 <div style="float: right"> 
                     <form>
