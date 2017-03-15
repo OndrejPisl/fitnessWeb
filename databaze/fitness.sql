@@ -2,10 +2,10 @@
 -- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 11, 2017 at 01:18 PM
--- Server version: 5.7.14
--- PHP Version: 5.6.25
+-- Počítač: 127.0.0.1
+-- Vytvořeno: Stř 15. bře 2017, 19:05
+-- Verze serveru: 5.7.14
+-- Verze PHP: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `fitness`
+-- Databáze: `fitness`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `narodnosti`
+-- Struktura tabulky `narodnosti`
 --
 
 CREATE TABLE `narodnosti` (
@@ -32,7 +32,7 @@ CREATE TABLE `narodnosti` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
 
 --
--- Dumping data for table `narodnosti`
+-- Vypisuji data pro tabulku `narodnosti`
 --
 
 INSERT INTO `narodnosti` (`id`, `nazev`) VALUES
@@ -42,7 +42,7 @@ INSERT INTO `narodnosti` (`id`, `nazev`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `uzivatele`
+-- Struktura tabulky `uzivatele`
 --
 
 CREATE TABLE `uzivatele` (
@@ -50,6 +50,7 @@ CREATE TABLE `uzivatele` (
   `jmeno` varchar(254) COLLATE utf8_czech_ci DEFAULT NULL,
   `prijmeni` varchar(254) COLLATE utf8_czech_ci DEFAULT NULL,
   `datum` date DEFAULT NULL,
+  `vyska` float NOT NULL,
   `email` varchar(254) COLLATE utf8_czech_ci NOT NULL,
   `heslo` char(50) COLLATE utf8_czech_ci NOT NULL,
   `tel` varchar(15) COLLATE utf8_czech_ci DEFAULT NULL,
@@ -61,23 +62,21 @@ CREATE TABLE `uzivatele` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
 
 --
--- Dumping data for table `uzivatele`
+-- Vypisuji data pro tabulku `uzivatele`
 --
 
-INSERT INTO `uzivatele` (`id`, `jmeno`, `prijmeni`, `datum`, `email`, `heslo`, `tel`, `pohlavi`, `narodnost_id`, `info`, `prava`, `potvrzeni_pristupu`) VALUES
-(1, 'Ondřej', 'Pišl', '1997-06-26', 'pisl.ondrej@gmail.com', '202cb962ac59075b964b07152d234b70', '775122082', 1, 1, 'ahoj, jsem ajťák!', 1, 1),
-(2, 'Pavel', 'Pudil', '1997-01-01', 'pavel.pudil@gmail.com', '159', '789456123', 1, 1, 'Jmenuju se pavel', 0, 1),
-(3, 'Petr', 'Pisl', '2011-11-11', 'petrpisl@gmail.com', '140f6969d5213fd0ece03148e62e461e', '+420777471259', 1, 1, 'Jem otec Ond5eje Pi3la a tot8lne m', 0, 1),
-(5, 'Ondy', 'Pisl', '2011-11-11', 'ondy@gmail.com', '202cb962ac59075b964b07152d234b70', '777 777 777', 1, 2, 'asdasd', 0, 1),
-(6, 'tomas', 'kokos', '1592-11-11', 'tomaskokos@gmail.com', '202cb962ac59075b964b07152d234b70', '777 755 455', 1, 1, 'asdasd', 0, 1),
-(9, 'kolo', 'obecne', '1111-11-11', 'koloobecne', '202cb962ac59075b964b07152d234b70', '7777777777', 1, 1, 'asdasd', 0, 0),
-(10, 'asdasd', 'asdasda', '1111-11-11', 'dfdfg', 'd58e3582afa99040e27b92b13c8f2280', 'dfgdfg', 1, 1, 'dfgdfg', 0, 0),
-(11, 'asdasd', 'asdasda', '1111-11-11', 'dfdfg', 'd58e3582afa99040e27b92b13c8f2280', 'dfgdfg', 1, 1, 'dfgdfg', 0, 0);
+INSERT INTO `uzivatele` (`id`, `jmeno`, `prijmeni`, `datum`, `vyska`, `email`, `heslo`, `tel`, `pohlavi`, `narodnost_id`, `info`, `prava`, `potvrzeni_pristupu`) VALUES
+(1, 'Ondřej', 'Pišl', '1997-06-26', 1.72, 'pisl.ondrej@gmail.com', '202cb962ac59075b964b07152d234b70', '775122082', 1, 1, 'ahoj, jsem ajťák!', 1, 1),
+(2, 'Pája', 'Puďas', '1997-01-01', 0, 'pavel.pudil@gmail.com', '159', '789456123', 1, 1, 'Jmenuju se pavel', 0, 1),
+(3, 'Petr', 'Pisl', '2011-11-11', 0, 'petrpisl@gmail.com', '140f6969d5213fd0ece03148e62e461e', '+420777471259', 1, 1, 'Jem otec Ond5eje Pi3la a tot8lne m', 0, 1),
+(5, 'Ondy', 'Pisl', '2011-11-11', 0, 'ondy@gmail.com', '202cb962ac59075b964b07152d234b70', '777 777 777', 1, 2, 'asdasd', 0, 1),
+(9, 'kolo', 'obecne', '1111-11-11', 0, 'koloobecne', '202cb962ac59075b964b07152d234b70', '7777777777', 1, 1, 'asdasd', 0, 0),
+(10, 'asdasd', 'asdasda', '1111-11-11', 0, 'dfdfg', 'd58e3582afa99040e27b92b13c8f2280', 'dfgdfg', 1, 1, 'dfgdfg', 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vahy`
+-- Struktura tabulky `vahy`
 --
 
 CREATE TABLE `vahy` (
@@ -87,7 +86,7 @@ CREATE TABLE `vahy` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `vahy`
+-- Vypisuji data pro tabulku `vahy`
 --
 
 INSERT INTO `vahy` (`uzivatele_id`, `vaha`, `datum`) VALUES
@@ -99,35 +98,36 @@ INSERT INTO `vahy` (`uzivatele_id`, `vaha`, `datum`) VALUES
 (1, 58, '2016-02-18'),
 (1, 72.5, '2017-03-06'),
 (1, 82.6, '2016-12-12'),
-(1, 74, '2017-01-12');
+(1, 74, '2017-01-12'),
+(1, 77, '2017-03-12');
 
 --
--- Indexes for dumped tables
+-- Klíče pro exportované tabulky
 --
 
 --
--- Indexes for table `narodnosti`
+-- Klíče pro tabulku `narodnosti`
 --
 ALTER TABLE `narodnosti`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `uzivatele`
+-- Klíče pro tabulku `uzivatele`
 --
 ALTER TABLE `uzivatele`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pro tabulky
 --
 
 --
--- AUTO_INCREMENT for table `narodnosti`
+-- AUTO_INCREMENT pro tabulku `narodnosti`
 --
 ALTER TABLE `narodnosti`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT for table `uzivatele`
+-- AUTO_INCREMENT pro tabulku `uzivatele`
 --
 ALTER TABLE `uzivatele`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;

@@ -72,8 +72,9 @@ if (!isset($_SESSION["email"]))
                         echo "</div>";
                     }
                     ?>
+                    <h2>Přání a stížnosti:</h2>
                     <form method="post">
-
+                          
                         <textarea name="zprava"></textarea>
                         <input type="submit" value="Odeslat">
                     </form>
