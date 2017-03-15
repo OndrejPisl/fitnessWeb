@@ -25,12 +25,12 @@ if (!isset($_SESSION["prava"]) == '1') {
 
                 <?php
                 if ($_SESSION["prava"] == 1) {
-                    echo "<div class='uzivatelodkazy'><a href='uzivatel.php'>Zpět</a>";
-                    echo "<a href='prijeti.php'>Přijetí</a></div>";
+                    echo "<a href='uzivatel.php' class='uzivatelodkazy'>Zpět</a>";
+                    echo "<a href='prijeti.php' class='uzivatelodkazy'>Přijetí</a>";
                 }
                 ?><div><?php
                     echo "<h1>Správa uživatelů</h1>";
-                    echo "<table class='formprijeti'>
+                    echo "<div class='formprijeti'><table>
    <tr>
      <th>Jméno</th>
      <th>Přjmení</th>
@@ -68,7 +68,7 @@ if (!isset($_SESSION["prava"]) == '1') {
                         $update = "UPDATE `fitness`.`uzivatele` SET `potvrzeni_pristupu` = '1' WHERE `uzivatele`.`id` = {$zaznam["id"]}";
                         $dotaz_update = mysqli_query($connect, $update);
                     }
-                    echo "</table>";
+                    echo "</table></div>";
                     ?>
 
                 </div>

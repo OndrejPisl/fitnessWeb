@@ -17,13 +17,14 @@ include 'pripojeni.php';
             include 'fce.php';
             ?>
             <article>
-                <h1>Přijetí žádostí</h1>
+                
                 <?php
                 if ($_SESSION["prava"] == 1) {
-                    echo "<div class='uzivatelodkazy'><a href='uzivatel.php'>Zpět</a>";
-                    echo "<a href='sprava-uzivatelu.php'>Správa uživatelů</a></div>";
+                    echo "<a href='uzivatel.php' class='uzivatelodkazy'>Zpět</a>";
+                    echo "<a href='sprava-uzivatelu.php' class='uzivatelodkazy'>Správa uživatelů</a>";
                 }
-                echo "<table class='formprijeti'>
+                echo "<h1>Přijetí žádostí</h1>";
+                echo "<div class='formprijeti'><table class='formprijeti'>
    <tr>
      <th>Jméno</th>
      <th>Přjmení</th>
@@ -56,16 +57,17 @@ include 'pripojeni.php';
      <td><a href='potvrzeni.php?id={$zaznam["uzivatel_id"]}' class='prijetiodkazy'>Přijmout</a></td>
 	 <td><a href='odmitnuti.php?id={$zaznam["uzivatel_id"]}' class='spravaodmitnutiodkazy'>Smazat</a></td>
 
-   </tr> ";
+   </tr>";
                 }
                 if (isset($_POST["prijmout"])) {
                     $update = "UPDATE `fitness`.`uzivatele` SET `potvrzeni_pristupu` = '1' WHERE `uzivatele`.`id` = {$zaznam["id"]}";
                     $dotaz_update = mysqli_query($connect, $update);
                 }
+                echo "</table></div>";
                 ?>
 
                 </table>
-
+                
             </article>
             <footer>
             </footer>

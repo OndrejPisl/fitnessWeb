@@ -226,22 +226,27 @@
     .prijetiodkazy:hover {
         background-color: #2E68B2;
     }
-    .uzivatelodkazy{
+   /* .uzivatelodkazy{
         width: 95%;
-    }
-    .uzivatelodkazy > a{
-
+    }*/
+    .uzivatelodkazy{
+        width: 90%;
         text-decoration: none;
         background-color: #377EB5;
         color: white;
-        padding: 14px 20px;
+      /*  padding: 14px 20px;*/
+        
+        padding-left: 15px;
+        padding: 5px;
         border: none;
         border-radius: 4px;
         cursor: pointer;
-        margin-left: 1%;
-        margin-right: 1%;
+        margin-top: 1%;
+        margin-left: 5%;
+        margin-right: 4%;
+        margin-bottom: 1%;
         float: right;
-
+        text-align: center;
     }
     .uzivatelodkazy:hover {
         background-color: #2E68B2;
@@ -281,6 +286,9 @@
 
     .nadpisyuprostred{
         text-align: center;
+    }
+    .formprijeti{
+        overflow-x: auto;
     }
 }
 /* ---------------------------------------------------------------------------*/

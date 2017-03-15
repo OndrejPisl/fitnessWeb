@@ -25,11 +25,11 @@ if (!isset($_SESSION["email"]))
             <article>
                 <?php
                 if ($_SESSION["prava"] == 1) {
-                    echo "<div class='uzivatelodkazy'><a href='prijeti.php'>Přijetí</a>";
-                    echo "<a href='sprava-uzivatelu.php'>Správa uživatelů</a></div>";
+                    echo "<a href='prijeti.php' class='uzivatelodkazy'>Přijetí</a>";
+                    echo "<a href='sprava-uzivatelu.php' class='uzivatelodkazy'>Správa uživatelů</a>";
                 }
                 ?>
-                <div class="uzivatelodkazy"><a href="bmi.php">BMI</a></div>
+                <a href="bmi.php" class="uzivatelodkazy">BMI</a>
                 <div>
                     <?php
                     $data = mysqli_query($connect, "select uzivatele.id as uzivatel_id, uzivatele.jmeno, uzivatele.prijmeni, uzivatele.datum, uzivatele.email, uzivatele.tel, uzivatele.pohlavi, uzivatele.narodnost_id, uzivatele.info, narodnosti.id as narodnost_id, narodnosti.nazev as narodnost_nazev from uzivatele LEFT JOIN narodnosti ON uzivatele.narodnost_id=narodnosti.id where uzivatele.id='{$_SESSION["id"]}'");
