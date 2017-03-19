@@ -56,7 +56,7 @@ include 'pripojeni.php';
                             <label>Heslo:
                             </label>
                             <input type="password" name="heslo">
-                            <input type="submit" value="Přihlasit">
+                            <input type="submit" value="Přihlásit">
                         </form>
                     </div>
                     <?php

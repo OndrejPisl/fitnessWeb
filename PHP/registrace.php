@@ -20,7 +20,7 @@ include 'pripojeni.php';
                 <div class="formregistrace">
                     <?php
                     if (isset($_POST["jmeno"])) {
-//formulář byl odeslán
+//formulĂˇĹ™ byl odeslĂˇn
 //kontrola dat
                         $chyba = FALSE;
                         if ($_POST["jmeno"] == "") {
@@ -33,7 +33,7 @@ include 'pripojeni.php';
                         }
                         if ($_POST["heslo"] != $_POST["kheslo"]) {
                             $chyba = TRUE;
-                            echo "    <div class='hlasky'>Zadej stejné stejné heslo!</div>";
+                            echo "    <div class='hlasky'>Zadej stejné heslo!</div>";
                         }
                         if ($_POST["datum"] == "") {
                             $chyba = TRUE;
@@ -44,11 +44,11 @@ include 'pripojeni.php';
                         }
                         if ($_POST["email"] == "") {
                             $chyba = TRUE;
-                            echo "    <div class='hlasky'>Zadej sůj E-mail!</div>";
+                            echo "    <div class='hlasky'>Zadej svůj E-mail!</div>";
                         }
                         if ($_POST["telefon"] == "") {
                             $chyba = TRUE;
-                            echo "    <div class='hlasky'>Zadej své telefoní číslo!</div>";
+                            echo "    <div class='hlasky'>Zadej své telefonní číslo!</div>";
                         }
                         if ($_POST["pohlavi"] == "") {
                             $chyba = TRUE;
@@ -71,16 +71,28 @@ include 'pripojeni.php';
                             $info = $_POST["info"];
                             $prava = '0';
                             $pristup = '0';
-                            //uložení záznamu do tabulky
+                            //uloĹľenĂ­ zĂˇznamu do tabulky
+                            $overemail="SELECT COUNT(*) as pocet from uzivatele where email='$email'";
+                        /*    $om=mysqli_query($connect, $overemail);
+                            $vs= mysqli_fetch_array($om); */
+                            
+                            $data=mysqli_query($connect,$overemail);
+                            $zaznam=mysqli_fetch_array($data);
+                            $pouzity_email = $zaznam["pocet"];
+                    
+                            
+                            if($pouzity_email=='0'){
+                            
                             $sql = "INSERT INTO `fitness`.`uzivatele` (`jmeno`, `prijmeni`, `datum`, `email`, `heslo`, `vyska`, `tel`, `pohlavi`, `narodnost_id`, `info`, `prava`, `potvrzeni_pristupu`) VALUES ('$jmeno', '$prijmeni', '$datum', '$email', '$heslo', '$vyska', '$telefon', '$pohlavi', '$narodnost', '$info', '$prava', '$pristup');";
                             $dotaz = mysqli_query($connect, $sql);
                             if ($dotaz) {
-                                echo "<div class='okreg'>Data byla vložena</div>\n";
+                                echo "<div class='okreg'>Vše OK. Vyčkejte na potvrzení žádosti</div>\n";
                             } else {
-                                echo "<h2>Nepovedlo se odeslat žádost.</h2>\n";
+                                echo "<div class='hlasky'>Nezdařilo se!</div>\n";
                             }
+                            }else{echo"  <div class='hlasky'> Email už je použit.</div>";}
                         }
-                    }
+                        }
                     ?>
 
                     <form method="post" action="#">
@@ -88,25 +100,25 @@ include 'pripojeni.php';
 
                         <input type="text" name="jmeno" placeholder="Martin" value="<?= isset($_POST["jmeno"]) ? $_POST["jmeno"] : ""; ?>">
 
-                        <label>Přijmení:</label>
+                        <label>Příjmení:</label>
                         <input type="text" name="prijmeni" placeholder="Němec" value="<?= isset($_POST["prijmeni"]) ? $_POST["prijmeni"] : ""; ?>">
 
                         <label>Heslo:</label>
-                        <input type="password" name="heslo" placeholder="heslo" value="<?= isset($_POST["heslo"]) ? $_POST["heslo"] : ""; ?>">
+                        <input type="password" name="heslo" placeholder="***" value="<?= isset($_POST["heslo"]) ? $_POST["heslo"] : ""; ?>">
 
                         <label>Kontrola hesla:</label>
-                        <input type="password" name="kheslo" placeholder="heslo">
+                        <input type="password" name="kheslo" placeholder="***">
 
                         <label>Výška:</label>
                         <input type="number" name="vyska" placeholder="1.90" step="0.01" value="<?= isset($_POST["vyska"]) ? $_POST["vyska"] : ""; ?>">
 
-                        <label>Datum narození:</label>
+                        <label>Datum narození­:</label>
                         <input type="date" name="datum" placeholder="dd.mm.rrrr" value="<?= isset($_POST["datum"]) ? $_POST["datum"] : ""; ?>">
 
                         <label>E-mail:</label>
                         <input type="email" name="email" placeholder="jdemecvicit@seznam.cz" value="<?= isset($_POST["email"]) ? $_POST["email"] : ""; ?>">
 
-                        <label>Telefoní číslo:</label>
+                        <label>Telefonní číslo:</label>
                         <input type="text" name="telefon" placeholder="+420 777 777 777" value="<?= isset($_POST["tel"]) ? $_POST["tel"] : ""; ?>">
 
 
@@ -128,7 +140,7 @@ include 'pripojeni.php';
                             ?>
                         </select><br>
                         <label>Info o sobě:</label>
-                        <textarea class="info" name="info" placeholder="Zde krátce uveď svůj zdravotni stav (alergie, operace, atd.)... " value="<?= isset($_POST["info"]) ? $_POST["info"] : ""; ?>"></textarea>
+                        <textarea class="info" name="info" placeholder="Zde krátce uveď svůj zdravotní stav (alergie, operace, atd.)... " value="<?= isset($_POST["info"]) ? $_POST["info"] : ""; ?>"></textarea>
 
                         <input type="submit" value="Odeslat">
                     </form>
