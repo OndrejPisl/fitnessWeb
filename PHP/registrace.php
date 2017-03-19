@@ -119,7 +119,7 @@ include 'pripojeni.php';
                         <input type="email" name="email" placeholder="jdemecvicit@seznam.cz" value="<?= isset($_POST["email"]) ? $_POST["email"] : ""; ?>">
 
                         <label>Telefonní číslo:</label>
-                        <input type="text" name="telefon" placeholder="+420 777 777 777" value="<?= isset($_POST["tel"]) ? $_POST["tel"] : ""; ?>">
+                        <input type="text" name="telefon" placeholder="777 777 777" value="<?= isset($_POST["tel"]) ? $_POST["tel"] : ""; ?>">
 
 
                         <label>Pohlaví:</label>

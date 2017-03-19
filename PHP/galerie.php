@@ -14,7 +14,6 @@ include 'pripojeni.php';
 
             var pocet = 4;      // celkový počet fotek
             var cf = 1;         // globální proměnná - číslo fotografie
-
             function zobrazBiceps(c) {
                 cf = c;               // nastavení globální proměnné
                 document.getElementById("biceps").src = "../foto/svaly/biceps/biceps" + c + ".jpg";

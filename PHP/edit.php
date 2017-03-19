@@ -47,7 +47,7 @@ if (!isset($_SESSION["prava"]) == '1') {
                     }
                 }
                 ?>
-                <a href="sprava-uzivatelu.php" class="uzivatelodkazy">Zpět</a>
+                <a href="sprava-uzivatelu.php" class="uzivatelodkazy">Zpět</a> <br>
                 <div class="editacetabulka">
                     <form action="edit.php?id=<?php echo $_GET['id']; ?>" method="post">
 
