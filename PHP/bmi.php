@@ -107,7 +107,7 @@ if (!isset($_SESSION["email"]))
                     xhttp.setRequestHeader("Connection", "close");
                     xhttp.send(params);
                 } else {
-                    zpravaElement.innerHTML = "Spatny format datumu, zadejte ve formatu d.m.yyyy";
+                    zpravaElement.innerHTML = "Špatný formát datumu, zadejte ve formátu d.m.yyyy";
                     zpravaElement.style.visibility = "visible";
                 }
             }
@@ -255,7 +255,6 @@ if (!isset($_SESSION["email"]))
             }
 
             window.onload = function () {
-                ziskejVahy(grafConfig.odKdy, grafConfig.doKdy, grafConfig.rozsah);
                 var ctx = document.getElementById("bmiChart");
                 chart = new Chart(ctx, {
                     type: 'line',
@@ -271,6 +270,7 @@ if (!isset($_SESSION["email"]))
                         }
                     }
                 });
+                ziskejVahy(grafConfig.odKdy, grafConfig.doKdy, grafConfig.rozsah);
             }
         </script>
 

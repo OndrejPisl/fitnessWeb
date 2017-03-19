@@ -43,7 +43,7 @@ if (!isset($_SESSION["prava"]) == '1') {
    </tr>";
                     $data = mysqli_query($connect, "select uzivatele.id as uzivatel_id, uzivatele.jmeno, uzivatele.prijmeni,
             uzivatele.datum, uzivatele.vyska, uzivatele.email, uzivatele.tel, uzivatele.pohlavi, uzivatele.narodnost_id,
-            uzivatele.info, narodnosti.id as narodnost_id, narodnosti.nazev as narodnost_nazev from uzivatele LEFT JOIN
+            uzivatele.info, uzivatele.prava, narodnosti.id as narodnost_id, narodnosti.nazev as narodnost_nazev from uzivatele LEFT JOIN
             narodnosti ON uzivatele.narodnost_id=narodnosti.id where potvrzeni_pristupu='1' order by uzivatele.id");
                     while ($zaznam = mysqli_fetch_array($data)) {
                         if ($zaznam['pohlavi'] == 1) {
@@ -59,10 +59,11 @@ if (!isset($_SESSION["prava"]) == '1') {
      <td>{$zaznam["tel"]}</td>
      <td>{$zaznam["narodnost_nazev"]}</td>
      <td title='{$zaznam['info']}'>$informace</td>
-     <td><a href='edit.php?id={$zaznam["uzivatel_id"]}' class='spravaodkazy'>Upravit</a></td>
-     <td><a href='odmitnuti.php?id={$zaznam["uzivatel_id"]}' class='spravaodmitnutiodkazy'>Smazat</a></td>
-
-   </tr> ";
+     <td><a href='edit.php?id={$zaznam["uzivatel_id"]}' class='spravaodkazy'>Upravit</a></td>";
+      if ($zaznam["prava"] != "1") {
+                    echo "<td><a href='odmitnuti.php?id={$zaznam["uzivatel_id"]}' class='spravaodmitnutiodkazy'>Smazat</a></td>";
+                }
+  echo" </tr> ";
                     }
                     if (isset($_POST["prijmout"])) {
                         $update = "UPDATE `fitness`.`uzivatele` SET `potvrzeni_pristupu` = '1' WHERE `uzivatele`.`id` = {$zaznam["id"]}";
