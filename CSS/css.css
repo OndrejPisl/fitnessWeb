@@ -39,6 +39,7 @@
         margin: auto;
         text-align: left;
         min-height: 100vh;
+        overflow: auto;
     }
     footer{
         width: 100%;
@@ -337,6 +338,7 @@
         margin: auto;
         text-align: left;
         padding: 30px 10px 0px 10px;
+        overflow: auto;
     }
     footer{
         width: 100%;
