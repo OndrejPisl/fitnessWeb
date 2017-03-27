@@ -1,5 +1,5 @@
 <?php
-
+/*
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -12,7 +12,7 @@ if (!$connect) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-  /*
+  */
 $servername = "wm117.wedos.net";
 $username = "a142225_martin";
 $password = "Lamalama1+";
@@ -33,6 +33,6 @@ if (!$connect) {
     //echo "POST - $index<br>";
   }
 //echo "Connected successfully";
-    */
+    
    
 ?>
