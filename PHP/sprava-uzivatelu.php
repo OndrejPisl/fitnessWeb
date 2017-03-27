@@ -2,9 +2,10 @@
 session_start();
 include 'pripojeni.php';
 if (!isset($_SESSION["prava"]) == '1') {
-    echo"Nemáte opravnění!";
-    exit;
+    header("Location: prihlaseni.php");
 }
+if (!isset($_SESSION["email"]))
+    header("Location: prihlaseni.php");
 ?>
 <!doctype html>
 <html>

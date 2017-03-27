@@ -844,7 +844,7 @@ addParseToken(['MMM', 'MMMM'], function (input, array, config, token) {
 // LOCALES
 
 var MONTHS_IN_FORMAT = /D[oD]?(\[[^\[\]]*\]|\s)+MMMM?/;
-var defaultLocaleMonths = 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_');
+var defaultLocaleMonths = 'Leden_Únor_Březen_Duben_Květen_Červen_Červenec_Srpen_Září_Říjen_Listopad_Prosinec'.split('_');
 function localeMonths (m, format) {
     if (!m) {
         return this._months;
@@ -853,7 +853,7 @@ function localeMonths (m, format) {
         this._months[(this._months.isFormat || MONTHS_IN_FORMAT).test(format) ? 'format' : 'standalone'][m.month()];
 }
 
-var defaultLocaleMonthsShort = 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split('_');
+var defaultLocaleMonthsShort = 'Led_Úno_Bře_Dub_Kvě_Čer_Črc_Srp_Zář_Říj_Lis_Pro'.split('_');
 function localeMonthsShort (m, format) {
     if (!m) {
         return this._monthsShort;
@@ -1352,7 +1352,7 @@ function parseIsoWeekday(input, locale) {
 
 // LOCALES
 
-var defaultLocaleWeekdays = 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_');
+var defaultLocaleWeekdays = 'Neděle_Pondělí_Úterý_Středa_Čtvrtek_Pátek_Sobota'.split('_');
 function localeWeekdays (m, format) {
     if (!m) {
         return this._weekdays;
@@ -1361,7 +1361,7 @@ function localeWeekdays (m, format) {
         this._weekdays[this._weekdays.isFormat.test(format) ? 'format' : 'standalone'][m.day()];
 }
 
-var defaultLocaleWeekdaysShort = 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_');
+var defaultLocaleWeekdaysShort = 'Ned_Pon_Úte_Stř_Čtv_Pát_Sob'.split('_');
 function localeWeekdaysShort (m) {
     return (m) ? this._weekdaysShort[m.day()] : this._weekdaysShort;
 }

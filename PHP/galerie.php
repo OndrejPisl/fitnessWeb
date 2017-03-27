@@ -49,7 +49,7 @@ include 'pripojeni.php';
                 <br>
                 <script type="text/javascript">
                     for (i = 0; i <= pocet; i++) {
-                        document.write("<img src='../foto/svaly/biceps/nahledy/biceps" + i + ".jpg' class='malefoto' onclick='zobrazBiceps(" + i + ")'>");
+                        document.write("<img src='../foto/svaly/biceps/nahledy/biceps" + i + ".jpg' class='malefoto onclick='zobrazBiceps(" + i + ")'>");
                     }
                 </script>
                 <p>Dvojhlavý sval pažní (m. biceps brachii) je kosterním svalem ležícím na přední straně nadloktí, je ohybačem loketního kloubu a natahovačem kloubu ramenního. Je tedy antagonistou trojhlavého svalu, který je natahovačem loketního kloubu.</p>

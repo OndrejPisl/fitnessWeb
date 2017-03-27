@@ -1,6 +1,8 @@
 <?php
 session_start();
 include 'pripojeni.php';
+if (!isset($_SESSION["email"]))
+    header("Location: prihlaseni.php");
 ?>
 <!doctype html>
 <html>

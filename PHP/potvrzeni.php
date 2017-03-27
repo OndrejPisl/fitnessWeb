@@ -11,7 +11,7 @@ if (isset($_GET["id"])) {
     $dotaz = "UPDATE `uzivatele` SET `potvrzeni_pristupu`='1' WHERE uzivatele.id={$_GET["id"]} limit 1";
     $data = mysqli_query($connect, $dotaz);
     if ($data) {
-        header("Location: prijeti.php");
+        header("Location: sprava-uzivatelu.php");
     } else {
         echo "<h2>chyba</h2>";
     }
