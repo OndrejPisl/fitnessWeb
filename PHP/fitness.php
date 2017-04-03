@@ -25,6 +25,7 @@ include 'pripojeni.php';
             <h2>Proč právě fitness?</h2>
             <p>To je otázka, kterou bychom si měli zákonitě položit, dostaneme li se do fáze „zlomu“, kdy naše tělo v zrcadle ztrácí kontury a začíná připomínat tajícího sněhuláka. Pánům se povolují a kulatí bříška, dámy i mladších ročníků „zdobí“ pozadí připomínající dva vaky naplněné vodou.</p>
             <p>Cvičení má pozitivní vliv na psychiku i fyzickou zdatnost a kondici člověka. Po pár vteřinách fyzické námahy se zvyšuje srdeční tep, začínají se spalovat sacharidy a tuky, dýcháme zhluboka, takže se svalům dostává více kyslíku. Po hodině stále tělo stále ještě spaluje rychleji, posiluje se imunitní systém. Ještě ten den svaly začnou obnovovat a posilovat, tělo se rychleji zbavuje glukózy z krve, takže se snižuje riziko srdečních chorob i diabetu, po týdnu cvičení se nám už zlepší kondice, máme silnější imunitu, nižší krevní tlak a po několika měsících už máme kromě celkově lepšího zdravotního stavu srdce a plic, zvětšení svalů, sníženého rizika onemocnění některými chorobami také nižší množství tělesného tuku a často i lepší náladu, cítíme se méně ve stresu a obecně psychický stav je lepší.</p>
+            <p>Zdroj informací a obrázků najde na: <a class="odkazynastranky" href="http://www.ronnie.cz/">www.ronie.cz</a> a <a class="odkazynastranky" href="http://www.supertelo.cz/">www.supertelo.cz</a></p>
         </article>
         <footer>
         </footer>

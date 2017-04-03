@@ -298,6 +298,17 @@
     .editacetabulka{
         margin: 1%;
     }
+    .fanatic{
+        width: 98%;
+        height: auto;
+        margin: 1%;
+    }
+        .odkazynastranky{
+        color: grey;
+    }
+    .odkazynastranky:hover{
+        color: #377EB5;
+    }
 }
 /* ---------------------------------------------------------------------------*/
 
@@ -580,6 +591,17 @@
     }
         .bmiart{
         overflow: auto;
+    }
+    .fanatic{
+        width: 31%;
+        height: auto;
+        margin: 1%;
+    }
+    .odkazynastranky{
+        color: grey;
+    }
+    .odkazynastranky:hover{
+        color: #377EB5;
     }
 }
 /*

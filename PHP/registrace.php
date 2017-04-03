@@ -83,7 +83,7 @@ include 'pripojeni.php';
                             
                             if($pouzity_email=='0'){
                             
-                            $sql = "INSERT INTO `fitness`.`uzivatele` (`jmeno`, `prijmeni`, `datum`, `email`, `heslo`, `vyska`, `tel`, `pohlavi`, `narodnost_id`, `info`, `prava`, `potvrzeni_pristupu`) VALUES ('$jmeno', '$prijmeni', '$datum', '$email', '$heslo', '$vyska', '$telefon', '$pohlavi', '$narodnost', '$info', '$prava', '$pristup');";
+                            $sql = "INSERT INTO `uzivatele` (`jmeno`, `prijmeni`, `datum`, `email`, `heslo`, `vyska`, `tel`, `pohlavi`, `narodnost_id`, `info`, `prava`, `potvrzeni_pristupu`) VALUES ('$jmeno', '$prijmeni', '$datum', '$email', '$heslo', '$vyska', '$telefon', '$pohlavi', '$narodnost', '$info', '$prava', '$pristup');";
                             $dotaz = mysqli_query($connect, $sql);
                             if ($dotaz) {
                                 echo "<div class='okreg'>Vše OK. Vyčkejte na potvrzení žádosti</div>\n";

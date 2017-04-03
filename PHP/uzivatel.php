@@ -81,7 +81,7 @@ if (!isset($_SESSION["email"]))
                     <?php
                     if (isset($_POST["zprava"])) {
                         if ($_POST["zprava"] == "") {
-                            echo "vypln";
+                            echo "vyplň";
                         } else {
                             $to = 'pisl.ondrej@gmail.com';
                             $subject = 'můj předmět';

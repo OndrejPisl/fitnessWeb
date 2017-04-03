@@ -28,6 +28,10 @@ include 'pripojeni.php';
             <h2>PROČ TO DĚLÁM</h2>
             <p>Každý kdo začíná a nemá se cvičením žádné zkušenosti, by měl určitě investovat do osobního trenéra. Správné provedení cviků, sestavení individuálního tréninkového plánu a jídelníčku je základ a s tím bych vám rád pomohl.</p>
             <h1 class="nadpisyuprostred">Tak se nestyď a Přijď si zacvičit!</h1>
+            <img  class="fanatic" src="../foto/pos2.jpg">
+            <img  class="fanatic" src="../foto/pos10.jpg">
+            <img  class="fanatic" src="../foto/pos7.jpg">
+                
         </article>
         <footer>
         </footer>

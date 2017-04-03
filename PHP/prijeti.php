@@ -62,13 +62,13 @@ if (!isset($_SESSION["email"]))
    </tr>";
                 }
                 if (isset($_POST["prijmout"])) {
-                    $update = "UPDATE `fitness`.`uzivatele` SET `potvrzeni_pristupu` = '1' WHERE `uzivatele`.`id` = {$zaznam["id"]}";
+                    $update = "UPDATE `uzivatele` SET `potvrzeni_pristupu` = '1' WHERE `uzivatele`.`id` = {$zaznam["id"]}";
                     $dotaz_update = mysqli_query($connect, $update);
                 }
                 echo "</table></div>";
                 ?>
 
-                </table>
+                
                 
             </article>
             <footer>
