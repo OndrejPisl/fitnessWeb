@@ -1,11 +1,14 @@
 <?php
 session_start();
 include 'pripojeni.php';
-if (!isset($_SESSION["prava"]) == '1') {
-    header("Location: prihlaseni.php");
+if(!(isset($_SESSION["email"]))){
+    header("Location: index.php");
+    exit;
 }
-if (!isset($_SESSION["email"]))
-    header("Location: prihlaseni.php");
+if($_SESSION["prava"]=='0') {
+    header("Location: nemasopravneni.php");
+    exit;
+}
 ?>
 <!doctype html>
 <html>
@@ -26,17 +29,17 @@ if (!isset($_SESSION["email"]))
 
                 <?php
                 if ($_SESSION["prava"] == 1) {
-                    echo "<a href='uzivatel.php' class='uzivatelodkazy'>Zpět</a>";
-                    echo "<a href='prijeti.php' class='uzivatelodkazy'>Přijetí</a>";
+                    echo "<a href='uzivatel.php' class='uzivatelodkazy'>Zp�t</a>";
+                    echo "<a href='prijeti.php' class='uzivatelodkazy'>P�ijet�</a>";
                 }
                 ?><div><?php
                     echo "<h1>Správa uživatelů</h1>";
                     echo "<div class='formprijeti'><table>
    <tr>
      <th>Jméno</th>
-     <th>Přjmení</th>
+     <th>Příjmen�</th>
      <th>E-mail</th>
-     <th>Telefoní číslo</th>
+     <th>Telefonní číslo</th>
      <th>Národnost</th>
      <th>Info o sobě</th>
 	 <th>Upravení</th>
@@ -67,7 +70,7 @@ if (!isset($_SESSION["email"]))
   echo" </tr> ";
                     }
                     if (isset($_POST["prijmout"])) {
-                        $update = "UPDATE `fitness`.`uzivatele` SET `potvrzeni_pristupu` = '1' WHERE `uzivatele`.`id` = {$zaznam["id"]}";
+                        $update = "UPDATE `uzivatele` SET `potvrzeni_pristupu` = '1' WHERE `uzivatele`.`id` = {$zaznam["id"]}";
                         $dotaz_update = mysqli_query($connect, $update);
                     }
                     echo "</table></div>";

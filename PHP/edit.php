@@ -1,8 +1,12 @@
 <?php
 session_start();
 include 'pripojeni.php';
-if (!isset($_SESSION["prava"]) == '1') {
-    echo"Nemáte opravnění!";
+if(!(isset($_SESSION["email"]))){
+    header("Location: index.php");
+    exit;
+}
+if($_SESSION["prava"]=='0') {
+    header("Location: nemasopravneni.php");
     exit;
 }
 ?>
@@ -43,7 +47,7 @@ if (!isset($_SESSION["prava"]) == '1') {
                         }
                         header("Location:sprava-uzivatelu.php");
                     } else {
-                        echo"Vyplň data!";
+                        echo"Vypl�? data!";
                     }
                 }
                 ?>
@@ -65,7 +69,7 @@ if (!isset($_SESSION["prava"]) == '1') {
                         <label>E-mail:</label>
                         <input type="email" name="email" value="<?php echo $lide['email']; ?>"><br>
 
-                        <label>Telefoní číslo:</label>
+                        <label>Telefonní číslo:</label>
                         <input type="text" name="tel" value="<?php echo $lide['tel']; ?>"><br>
 
                         <textarea name="info" rows="5" cols="50"><?php echo $lide['info']; ?></textarea><br>

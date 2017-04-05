@@ -1,8 +1,14 @@
 <?php
 session_start();
 include 'pripojeni.php';
-if (!isset($_SESSION["email"]))
-    header("Location: prihlaseni.php");
+if(!(isset($_SESSION["email"]))){
+    header("Location: index.php");
+    exit;
+}
+if($_SESSION["prava"]=='0') {
+    header("Location: nemasopravneni.php");
+    exit;
+}
 ?>
 <!doctype html>
 <html>
@@ -29,10 +35,10 @@ if (!isset($_SESSION["email"]))
                 echo "<div class='formprijeti'><table class='formprijeti'>
    <tr>
      <th>Jméno</th>
-     <th>Přjmení</th>
+     <th>Příjmení</th>
      <th>Datum narození</th>
      <th>E-mail</th>
-     <th>Telefoní číslo</th>
+     <th>Telefonní číslo</th>
      <th>Pohlaví</th>
      <th>Národnost</th>
      <th>Info o sobě</th>
@@ -42,9 +48,9 @@ if (!isset($_SESSION["email"]))
                 $data = mysqli_query($connect, "select uzivatele.id as uzivatel_id, uzivatele.jmeno, uzivatele.prijmeni, uzivatele.datum, uzivatele.vyska, uzivatele.email, uzivatele.tel, uzivatele.pohlavi, uzivatele.narodnost_id, uzivatele.info, narodnosti.id as narodnost_id, narodnosti.nazev as narodnost_nazev from uzivatele LEFT JOIN narodnosti ON uzivatele.narodnost_id=narodnosti.id where potvrzeni_pristupu='0' order by uzivatele.id");
                 while ($zaznam = mysqli_fetch_array($data)) {
                     if ($zaznam['pohlavi'] == 1) {
-                        $pohlavi = 'muž';
+                        $pohlavi = 'mu�';
                     } else {
-                        $pohlavi = 'žena';
+                        $pohlavi = '�ena';
                     }
                     $informace = zkratitText($zaznam["info"], 30);
                     echo "   <tr>
@@ -56,7 +62,7 @@ if (!isset($_SESSION["email"]))
      <td>$pohlavi</td>
      <td>{$zaznam["narodnost_nazev"]}</td>
      <td title='{$zaznam['info']}'>$informace</td>
-     <td><a href='potvrzeni.php?id={$zaznam["uzivatel_id"]}' class='prijetiodkazy'>Přijmout</a></td>
+     <td><a href='potvrzeni.php?id={$zaznam["uzivatel_id"]}' class='prijetiodkazy'>Příjmout</a></td>
 	 <td><a href='odmitnuti.php?id={$zaznam["uzivatel_id"]}' class='spravaodmitnutiodkazy'>Smazat</a></td>
 
    </tr>";

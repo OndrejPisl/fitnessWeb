@@ -31,14 +31,16 @@ include 'pripojeni.php';
                             $data = mysqli_query($connect, $dotaz);
                             $zaznam = mysqli_fetch_array($data);
                             if ($zaznam["heslo"] == md5($_POST["heslo"])) {
-                                $_SESSION["email"] = $zaznam["email"];
-                                $_SESSION["prava"] = $zaznam["prava"];
-                                $_SESSION["id"] = $zaznam["id"];
-                                $_SESSION["potvrzeni_pristupu"] = $zaznam["potvrzeni_pristupu"];
-                                //echo"uzivatel {$_SESSION["email"]} prihlasen";
+                                
                                 if ($zaznam["potvrzeni_pristupu"] == "0") {
                                     header("Location: zatimneprijat.php");
+                                    exit;
                                 } else {
+                                    $_SESSION["email"] = $zaznam["email"];
+                                    $_SESSION["prava"] = $zaznam["prava"];
+                                    $_SESSION["id"] = $zaznam["id"];
+                                    $_SESSION["potvrzeni_pristupu"] = $zaznam["potvrzeni_pristupu"];
+                                    //echo"uzivatel {$_SESSION["email"]} prihlasen";
                                     header("Location: uzivatel.php");
                                 }
                             } else {
