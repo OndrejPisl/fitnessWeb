@@ -39,6 +39,8 @@ if (!isset($_SESSION["email"]))
                         } else {
                             $pohlavi = 'žena';
                         }
+                        $_SESSION["jmeno"] = $zaznam["jmeno"];
+                        $_SESSION["prijmeni"] = $zaznam["prijmeni"];
                         echo "<div class='uzivateldiv'>";
                         echo "<h1>{$zaznam["jmeno"]} {$zaznam["prijmeni"]}</h1>";
                         echo "  <table class='tableuzivatele'>
@@ -83,9 +85,12 @@ if (!isset($_SESSION["email"]))
                         if ($_POST["zprava"] == "") {
                             echo "vyplň";
                         } else {
+                            $udaje_zprava = $_POST["zprava"];
+                            $aktualni_jmeno = $_SESSION['jmeno'];
+                            $aktualni_prijmeni = $_SESSION["prijmeni"];
                             $to = 'pisl.ondrej@gmail.com';
-                            $subject = 'můj předmět';
-                            $message = 'Můj obsah zprávy....';
+                            $subject = $aktualni_jmeno.' '.$aktualni_prijmeni;
+                            $message = $udaje_zprava;
                             $headers = 'From: neodepisuj@ondra-fitness.cz' . "\r\n" .
                                     'Reply-To: neodepisuj@ondra-fitness.cz' . "\r\n" .
                                     'X-Mailer: PHP/' . phpversion();
@@ -93,14 +98,17 @@ if (!isset($_SESSION["email"]))
                             if ($odeslani == false) {
                                 echo "chyba";
                                 exit;
-                            }
+                            } else{
+                                echo "zpráva byla odeslána";
+                            } 
                         }
                     }
                     ?>
                 </div>
             </article>
             <footer>
+                
             </footer>
         </div>
-    </body>
+    </body>                  
 </html>
