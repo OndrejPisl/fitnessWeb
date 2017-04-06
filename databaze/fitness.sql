@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Počítač: 127.0.0.1
--- Vytvořeno: Úte 04. dub 2017, 04:28
+-- Vytvořeno: Čtv 06. dub 2017, 21:20
 -- Verze serveru: 5.7.14
 -- Verze PHP: 5.6.25
 
