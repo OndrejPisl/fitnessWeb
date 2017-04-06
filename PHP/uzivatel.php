@@ -12,7 +12,7 @@ if (!isset($_SESSION["email"]))
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>
+        <title>Fitness - Martin Němec
         </title>
         <link rel="stylesheet" href="../CSS/css.css">
         <link rel="shortcut icon" href="../foto/favicon.bmp" type="image/x-icon">
@@ -83,23 +83,23 @@ if (!isset($_SESSION["email"]))
                     <?php
                     if (isset($_POST["zprava"])) {
                         if ($_POST["zprava"] == "") {
-                            echo "vyplň";
+                            echo "<div class='hlasky'>Vyplň!</div>";
                         } else {
                             $udaje_zprava = $_POST["zprava"];
                             $aktualni_jmeno = $_SESSION['jmeno'];
                             $aktualni_prijmeni = $_SESSION["prijmeni"];
+                            $aktualni_email = $_SESSION["email"];
                             $to = 'pisl.ondrej@gmail.com';
-                            $subject = $aktualni_jmeno.' '.$aktualni_prijmeni;
+                            $subject = $aktualni_jmeno.' '.$aktualni_prijmeni.' '.$aktualni_email;
                             $message = $udaje_zprava;
-                            $headers = 'From: neodepisuj@ondra-fitness.cz' . "\r\n" .
-                                    'Reply-To: neodepisuj@ondra-fitness.cz' . "\r\n" .
+                            $headers = 'From: FITNESS'. "\r\n" .
+                                    'Reply-To: FITNESS'. "\r\n" .
                                     'X-Mailer: PHP/' . phpversion();
                             $odeslani = mail($to, $subject, $message, $headers);
                             if ($odeslani == false) {
-                                echo "chyba";
-                                exit;
+                                echo "";
                             } else{
-                                echo "zpráva byla odeslána";
+                                echo "<div class='okreg'>Zpráva byla odeslána!</div>";
                             } 
                         }
                     }

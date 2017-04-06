@@ -14,7 +14,7 @@ if($_SESSION["prava"]=='0') {
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Fitness - Martin Němec</title>
         <link rel="stylesheet" href="../CSS/css.css">
 
     </head>
@@ -48,9 +48,9 @@ if($_SESSION["prava"]=='0') {
                 $data = mysqli_query($connect, "select uzivatele.id as uzivatel_id, uzivatele.jmeno, uzivatele.prijmeni, uzivatele.datum, uzivatele.vyska, uzivatele.email, uzivatele.tel, uzivatele.pohlavi, uzivatele.narodnost_id, uzivatele.info, narodnosti.id as narodnost_id, narodnosti.nazev as narodnost_nazev from uzivatele LEFT JOIN narodnosti ON uzivatele.narodnost_id=narodnosti.id where potvrzeni_pristupu='0' order by uzivatele.id");
                 while ($zaznam = mysqli_fetch_array($data)) {
                     if ($zaznam['pohlavi'] == 1) {
-                        $pohlavi = 'mu�';
+                        $pohlavi = 'muž';
                     } else {
-                        $pohlavi = '�ena';
+                        $pohlavi = 'žena';
                     }
                     $informace = zkratitText($zaznam["info"], 30);
                     echo "   <tr>

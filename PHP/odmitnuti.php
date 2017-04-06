@@ -15,7 +15,7 @@ if (isset($_GET["id"])) {
     $data = mysqli_query($connect, $dotaz);
 
     if ($data) {
-        header("Location: prijeti.php");
+        header("Location: správa-uzivatelu.php");
     } else {
         echo "<h2>chyba</h2>";
     }

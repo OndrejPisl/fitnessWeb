@@ -7,7 +7,7 @@ include 'pripojeni.php';
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>
+        <title>Fitness - Martin Němec
         </title>
         <link rel="stylesheet" href="../CSS/css.css">
         <link rel="shortcut icon" href="../foto/favicon.bmp" type="image/x-icon">

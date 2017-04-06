@@ -14,7 +14,7 @@ if($_SESSION["prava"]=='0') {
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Fitness - Martin Němec</title>
         <link rel="stylesheet" href="../CSS/css.css">
         <link rel="shortcut icon" href="../foto/favicon.bmp" type="image/x-icon">
     </head>
@@ -29,15 +29,15 @@ if($_SESSION["prava"]=='0') {
 
                 <?php
                 if ($_SESSION["prava"] == 1) {
-                    echo "<a href='uzivatel.php' class='uzivatelodkazy'>Zp�t</a>";
-                    echo "<a href='prijeti.php' class='uzivatelodkazy'>P�ijet�</a>";
+                    echo "<a href='uzivatel.php' class='uzivatelodkazy'>Zpět</a>";
+                    echo "<a href='prijeti.php' class='uzivatelodkazy'>Přijetí</a>";
                 }
                 ?><div><?php
                     echo "<h1>Správa uživatelů</h1>";
                     echo "<div class='formprijeti'><table>
    <tr>
      <th>Jméno</th>
-     <th>Příjmen�</th>
+     <th>Příjmení</th>
      <th>E-mail</th>
      <th>Telefonní číslo</th>
      <th>Národnost</th>
